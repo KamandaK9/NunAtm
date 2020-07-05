@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashbackgrd" translatesAutoresizingMaskIntoConstraints="NO" id="CrQ-ZN-ujM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NALogo" translatesAutoresizingMaskIntoConstraints="NO" id="BZR-9C-2cO">
+                                <rect key="frame" x="109.66666666666669" y="342.66666666666669" width="156" height="127"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="127" id="Igs-ON-kny"/>
+                                    <constraint firstAttribute="width" constant="156" id="r2e-Nc-s5I"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.56078431370000004" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CrQ-ZN-ujM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5Au-gq-U3S"/>
+                            <constraint firstItem="BZR-9C-2cO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LiK-fA-jgg"/>
+                            <constraint firstItem="CrQ-ZN-ujM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Mzb-uv-cet"/>
+                            <constraint firstItem="BZR-9C-2cO" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="RkY-eb-F1f"/>
+                            <constraint firstItem="CrQ-ZN-ujM" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="a69-qh-s96"/>
+                            <constraint firstAttribute="bottom" secondItem="CrQ-ZN-ujM" secondAttribute="bottom" id="kVd-q4-3wa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.6305418719212"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NALogo" width="288" height="238"/>
+        <image name="splashbackgrd" width="1125" height="2436"/>
+    </resources>
+</document>

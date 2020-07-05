@@ -1,0 +1,6 @@
+framework module Pods_NoneAttm {
+  umbrella header "Pods-NoneAttm-umbrella.h"
+
+  export *
+  module * { export * }
+}
