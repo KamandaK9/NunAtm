@@ -61,7 +61,7 @@
 		01275F028DFAA05DE61E1A9D /* Pods_NoneAttm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoneAttm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		034521F82AEA0176F16E7127 /* Pods-NoneAttm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoneAttm.release.xcconfig"; path = "Target Support Files/Pods-NoneAttm/Pods-NoneAttm.release.xcconfig"; sourceTree = "<group>"; };
 		0C0092F32474336700C5FA20 /* libReachabilitySwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReachabilitySwift.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C059EEA248A82FD0060DFA9 /* ATMmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATMmodel.swift; sourceTree = "<group>"; };
+		0C059EEA248A82FD0060DFA9 /* ATMmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ATMmodel.swift; path = ../ATMmodel.swift; sourceTree = "<group>"; };
 		0C06294D23DC8113000DB1C7 /* SelectATMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectATMViewController.swift; sourceTree = "<group>"; };
 		0C06294F23DC8F14000DB1C7 /* PlaceMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMarker.swift; sourceTree = "<group>"; };
 		0C06295123DC9585000DB1C7 /* GooglePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
@@ -85,8 +85,8 @@
 		0C47A4AA23CBB62B008EE1C9 /* NoneAttmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoneAttmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C47A4AE23CBB62B008EE1C9 /* NoneAttmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoneAttmUITests.swift; sourceTree = "<group>"; };
 		0C47A4B023CBB62B008EE1C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C47A4BD23CBB6F8008EE1C9 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Regular.ttf"; path = "../../../../../Downloads/Poppins/Poppins-Regular.ttf"; sourceTree = "<group>"; };
-		0C47A4BF23CBBC4A008EE1C9 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-SemiBold.ttf"; path = "../../../../../Downloads/Poppins/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		0C47A4BD23CBB6F8008EE1C9 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		0C47A4BF23CBBC4A008EE1C9 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		0C63AE92243EC52900CC380F /* MaterialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialViewController.swift; sourceTree = "<group>"; };
 		0C63E53A24962B4C00807FF6 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		0C6F0A0F24728A6A00B9B69A /* PassthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassthroughView.swift; sourceTree = "<group>"; };
@@ -160,13 +160,13 @@
 		0C3646F12486515B0052F3B0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0C6F861B24B31C6700FFEB1E /* Voting */,
 				0C3646F2248652140052F3B0 /* MapStyles */,
 				0C276AF224744EAC00AE3B6A /* OfflineViewController.swift */,
 				0C276AEE2474495B00AE3B6A /* NetworkManager.swift */,
 				0C276AF024744AEB00AE3B6A /* LaunchViewController.swift */,
 				0C06294D23DC8113000DB1C7 /* SelectATMViewController.swift */,
 				0C708B6923D9BE7000B63D07 /* MapViewController.swift */,
-				0C059EEA248A82FD0060DFA9 /* ATMmodel.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -246,6 +246,14 @@
 				0C47A4BD23CBB6F8008EE1C9 /* Poppins-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0C6F861B24B31C6700FFEB1E /* Voting */ = {
+			isa = PBXGroup;
+			children = (
+				0C059EEA248A82FD0060DFA9 /* ATMmodel.swift */,
+			);
+			path = Voting;
 			sourceTree = "<group>";
 		};
 		0C99BA41243EC2880062DA94 /* Panels */ = {

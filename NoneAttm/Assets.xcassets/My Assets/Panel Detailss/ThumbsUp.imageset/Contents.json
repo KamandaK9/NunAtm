@@ -1,23 +1,23 @@
 {
   "images" : [
     {
+      "filename" : "Icon material-thumb-up.png",
       "idiom" : "universal",
-      "filename" : "Icon material-thumb-up-black.png",
       "scale" : "1x"
     },
     {
+      "filename" : "Icon material-thumb-up@2x.png",
       "idiom" : "universal",
-      "filename" : "Icon material-thumb-up-black@2x.png",
       "scale" : "2x"
     },
     {
+      "filename" : "Icon material-thumb-up@3x.png",
       "idiom" : "universal",
-      "filename" : "Icon material-thumb-up-black@3x.png",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

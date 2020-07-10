@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4cU-P6-mOx">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4cU-P6-mOx">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,59 +18,49 @@
             <objects>
                 <viewController id="X6w-Lg-XnL" customClass="SelectATMViewController" customModule="NoneAttm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hoU-fL-Tse">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="krL-x3-Cy8" userLabel="UpperTextView">
-                                <rect key="frame" x="20" y="44" width="377" height="177"/>
+                                <rect key="frame" x="20" y="0.0" width="377" height="174"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, Daniel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyM-YP-LFL">
-                                        <rect key="frame" x="8" y="30" width="139" height="42"/>
-                                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="30"/>
-                                        <color key="textColor" red="0.0" green="0.5607843137254902" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What ATM are" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRi-hs-5w4">
-                                        <rect key="frame" x="8" y="87" width="161" height="17"/>
+                                        <rect key="frame" x="-1" y="124" width="125.66666666666667" height="17"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="17" id="bBR-A1-gQ2"/>
+                                            <constraint firstAttribute="height" constant="17" id="Pm7-kQ-VCX"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="20"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.65098039215686276" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You looking for?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2R-Q0-Eqr">
-                                        <rect key="frame" x="8" y="112" width="161" height="28"/>
+                                        <rect key="frame" x="0.0" y="146.33333333333334" width="144.66666666666666" height="27.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="20"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.65098039215686276" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ch1-JN-du2" userLabel="Profilebutton">
-                                        <rect key="frame" x="277" y="30" width="92" height="131"/>
-                                        <state key="normal" image="Profile Picture"/>
-                                        <connections>
-                                            <action selector="ShowName:" destination="X6w-Lg-XnL" eventType="touchUpInside" id="j1V-UB-GKa"/>
-                                        </connections>
-                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyM-YP-LFL">
+                                        <rect key="frame" x="-2" y="66" width="136.33333333333334" height="42"/>
+                                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="33"/>
+                                        <color key="textColor" red="0.0" green="0.5607843137254902" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="tyM-YP-LFL" firstAttribute="leading" secondItem="DRi-hs-5w4" secondAttribute="leading" id="4Vv-qx-dJo"/>
-                                    <constraint firstItem="DRi-hs-5w4" firstAttribute="leading" secondItem="R2R-Q0-Eqr" secondAttribute="leading" id="6s6-JU-xom"/>
-                                    <constraint firstItem="ch1-JN-du2" firstAttribute="trailing" secondItem="krL-x3-Cy8" secondAttribute="trailingMargin" id="BuW-fD-85i"/>
-                                    <constraint firstItem="ch1-JN-du2" firstAttribute="top" secondItem="krL-x3-Cy8" secondAttribute="top" constant="30" id="Od7-PN-RCZ"/>
-                                    <constraint firstItem="DRi-hs-5w4" firstAttribute="top" secondItem="tyM-YP-LFL" secondAttribute="bottom" constant="15" id="VWW-hc-Jv2"/>
-                                    <constraint firstItem="tyM-YP-LFL" firstAttribute="top" secondItem="krL-x3-Cy8" secondAttribute="top" constant="30" id="Xu3-XE-z26"/>
-                                    <constraint firstItem="R2R-Q0-Eqr" firstAttribute="top" secondItem="DRi-hs-5w4" secondAttribute="bottom" constant="8" symbolic="YES" id="mAa-AA-np1"/>
-                                    <constraint firstItem="tyM-YP-LFL" firstAttribute="leading" secondItem="krL-x3-Cy8" secondAttribute="leading" constant="8" id="qxS-rP-03k"/>
-                                    <constraint firstItem="DRi-hs-5w4" firstAttribute="centerY" secondItem="ch1-JN-du2" secondAttribute="centerY" id="s8L-fS-CtY"/>
-                                    <constraint firstAttribute="bottom" secondItem="R2R-Q0-Eqr" secondAttribute="bottom" constant="37" id="sbL-Iu-71u"/>
-                                    <constraint firstItem="tyM-YP-LFL" firstAttribute="leading" secondItem="krL-x3-Cy8" secondAttribute="leadingMargin" id="wXO-SK-022"/>
-                                    <constraint firstItem="DRi-hs-5w4" firstAttribute="trailing" secondItem="R2R-Q0-Eqr" secondAttribute="trailing" id="wiK-2J-96I"/>
+                                    <constraint firstItem="R2R-Q0-Eqr" firstAttribute="top" secondItem="DRi-hs-5w4" secondAttribute="bottom" constant="5.3333333333333428" id="0LU-hg-cLA"/>
+                                    <constraint firstAttribute="bottom" secondItem="R2R-Q0-Eqr" secondAttribute="bottom" id="Aiw-7B-Sq9"/>
+                                    <constraint firstItem="DRi-hs-5w4" firstAttribute="top" secondItem="krL-x3-Cy8" secondAttribute="top" constant="124" id="FU9-2O-ugy"/>
+                                    <constraint firstItem="tyM-YP-LFL" firstAttribute="top" secondItem="krL-x3-Cy8" secondAttribute="top" constant="66" id="GpL-Ds-tW3"/>
+                                    <constraint firstItem="R2R-Q0-Eqr" firstAttribute="leading" secondItem="krL-x3-Cy8" secondAttribute="leading" id="NZC-9t-kDX"/>
+                                    <constraint firstItem="DRi-hs-5w4" firstAttribute="leading" secondItem="krL-x3-Cy8" secondAttribute="leading" constant="-1" id="VuB-gW-gut"/>
+                                    <constraint firstItem="tyM-YP-LFL" firstAttribute="centerY" secondItem="krL-x3-Cy8" secondAttribute="centerY" id="asU-YK-beq"/>
+                                    <constraint firstItem="DRi-hs-5w4" firstAttribute="top" secondItem="tyM-YP-LFL" secondAttribute="bottom" constant="16" id="dvl-7o-3EG"/>
+                                    <constraint firstItem="tyM-YP-LFL" firstAttribute="leading" secondItem="krL-x3-Cy8" secondAttribute="leading" constant="-2" id="wlJ-ER-vmb"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5w0-tJ-kTK" userLabel="Bank View">
-                                <rect key="frame" x="0.0" y="200" width="414" height="696"/>
+                                <rect key="frame" x="0.0" y="200" width="414" height="516"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qiO-iQ-wQY" userLabel="FNBbutton">
                                         <rect key="frame" x="16" y="52" width="143" height="115"/>
@@ -185,18 +173,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u4g-pj-vXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-71.200000000000003" y="331.77339901477836"/>
+            <point key="canvasLocation" x="-72.463768115942031" y="330.97826086956525"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="4av-of-kQr">
             <objects>
                 <viewController storyboardIdentifier="Mapview" id="RcL-kF-Rl6" customClass="MapViewController" customModule="NoneAttm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dij-pU-Xea">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7r-dY-9RO" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="YES"/>
@@ -204,7 +192,7 @@
                                 <gestureRecognizers/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z4T-hE-3hq" customClass="PassthroughView" customModule="NoneAttm" customModuleProvider="target">
-                                <rect key="frame" x="16" y="69" width="382" height="144"/>
+                                <rect key="frame" x="16" y="25" width="382" height="144"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWW-gL-NAF" userLabel="BackButton">
                                         <rect key="frame" x="0.0" y="8" width="68" height="68"/>
@@ -273,7 +261,7 @@
             <objects>
                 <viewController storyboardIdentifier="LaunchViewContrller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4cU-P6-mOx" customClass="LaunchViewController" customModule="NoneAttm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q83-kp-H24">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="R0v-c7-7iM"/>
                     </view>
@@ -291,14 +279,14 @@
             <objects>
                 <viewController id="xn4-ma-FoP" customClass="OfflineViewController" customModule="NoneAttm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IPd-m9-YfS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Offline" translatesAutoresizingMaskIntoConstraints="NO" id="qMQ-3t-BbH">
-                                <rect key="frame" x="87" y="380" width="240" height="221"/>
+                                <rect key="frame" x="87" y="336" width="240" height="119"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are offline, connect to the internet." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fnm-71-YQd">
-                                <rect key="frame" x="20" y="609" width="374" height="35"/>
+                                <rect key="frame" x="20" y="463" width="374" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="EMr-Do-4U4"/>
                                 </constraints>
@@ -328,23 +316,22 @@
             <point key="canvasLocation" x="-71.200000000000003" y="-537.192118226601"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Absa_Button" width="165" height="136"/>
-        <image name="BackButton" width="68" height="68"/>
-        <image name="Capitec_Button" width="165" height="136"/>
-        <image name="Fnb_Button" width="165" height="136"/>
-        <image name="LocationButton" width="66" height="68"/>
-        <image name="LocationEmpty" width="36" height="37"/>
-        <image name="LocationSelected" width="36" height="37"/>
-        <image name="Nedbank_Button" width="166" height="136"/>
-        <image name="Offline" width="100" height="125"/>
-        <image name="Profile Picture" width="92" height="92"/>
-        <image name="SettingsButton" width="66" height="68"/>
-        <image name="SettingsImage" width="31" height="31"/>
-        <image name="Standard_Button" width="197" height="164"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="67L-QJ-j6S"/>
         <segue reference="NdM-UP-ktI"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="Absa_Button" width="165.66667175292969" height="136.33332824707031"/>
+        <image name="BackButton" width="68" height="68"/>
+        <image name="Capitec_Button" width="165.66667175292969" height="136.33332824707031"/>
+        <image name="Fnb_Button" width="165.66667175292969" height="136.33332824707031"/>
+        <image name="LocationButton" width="66" height="68"/>
+        <image name="LocationEmpty" width="36" height="37.333332061767578"/>
+        <image name="LocationSelected" width="36" height="37.333332061767578"/>
+        <image name="Nedbank_Button" width="165.66667175292969" height="136.33332824707031"/>
+        <image name="Offline" width="100" height="125"/>
+        <image name="SettingsButton" width="66" height="68"/>
+        <image name="SettingsImage" width="31" height="31"/>
+        <image name="Standard_Button" width="197" height="164"/>
+    </resources>
 </document>

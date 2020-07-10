@@ -162,10 +162,6 @@ class MapViewController: UIViewController {
     
         
         
-        
-    
-    
-    
     
  
     
@@ -243,22 +239,36 @@ extension MapViewController: GMSMapViewDelegate {
                     "votesDownCount": 0,
                     "totalVotes": 0] as [String : Any]
         
-        
-           self.ref.child(AtmKind).queryOrdered(byChild: "AtmAddress").queryEqual(toValue: atmloc).observeSingleEvent(of: .value, with: { (DataSnapshot) in
+           
+       
+            self.ref.child(self.AtmKind).queryOrdered(byChild: "AtmAddress").queryEqual(toValue: self.atmloc).observeSingleEvent(of: .value, with: { (DataSnapshot) in
             
             if DataSnapshot.exists(){
                 
+                
                 for item in DataSnapshot.children {
+                    
+                    let itemsID = item as! DataSnapshot
+                    let uid = itemsID.key
                     
                     let atm = Atm(snapshot: item as! DataSnapshot)
                     
-                    let ThumbsUpCount = atm.votesUpCount
-                    let ThumbsDownCount = atm.votesDownCount
-                    let TotalCount = atm.totalVotes
+                    let ThumbsUpCount = atm.votesUpCount.description
+                    let ThumbsDownCount = atm.votesDownCount.description
+                    let TotalCount = atm.totalVotes.description
                     
-                    NotificationCenter.default.post(name:NSNotification.Name("ATMVotes"),object: nil,userInfo: ["VotesUp": ThumbsUpCount, "VotesDown":ThumbsDownCount, "TotalVotes": TotalCount])
+                    //Updating Local Variables
+                    
+                    
+                   
+                    
+                    
+                         NotificationCenter.default.post(name:NSNotification.Name("ATMVotes"),object: nil,userInfo: ["VotesUp": ThumbsUpCount, "VotesDown":ThumbsDownCount, "TotalVotes": TotalCount, "uid": uid, "ATMKind": self.AtmKind])
+                                          
+                    
                    
                     print(ThumbsUpCount)
+                    
                 }
                 
             print("Data Exists")
@@ -296,7 +306,7 @@ extension MapViewController: GMSMapViewDelegate {
         })*/
         
         /// Sends placeMarker info to Panel
-        NotificationCenter.default.post(name:NSNotification.Name("UserTappedMarker"),object: nil,userInfo: ["AtmHeading": atmtitle, "AtmLocation":atmloc])
+            NotificationCenter.default.post(name:NSNotification.Name("UserTappedMarker"),object: nil,userInfo: ["AtmHeading": self.atmtitle, "AtmLocation":self.atmloc])
         
         
         /// Zooms in on selected ATM marker
