@@ -11,7 +11,7 @@ import GoogleMaps
 import RevealingSplashView
 import Firebase
 
-let googleApiKey = ""
+let googleApiKey = "AIzaSyBgAjsJmrTCRkgYWUo3atbhqccJw6Ly_bc"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

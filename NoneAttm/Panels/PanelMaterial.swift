@@ -265,6 +265,7 @@ class PanelMaterial: UIViewController, Panelable {
                     
                     
                 }
+                
                 case -1:
                 
                 if userVotedDown{
@@ -273,7 +274,7 @@ class PanelMaterial: UIViewController, Panelable {
                 }
                 else {
                     
-                    //change vote from dislike to like
+                    //change vote from like to dislike
                     self.VoteUpCount  -= 1
                     self.VoteDownCount += 1
                     
