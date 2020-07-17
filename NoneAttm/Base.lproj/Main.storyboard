@@ -16,16 +16,16 @@
         <!--SelectATM View Controller-->
         <scene sceneID="JjC-4x-InC">
             <objects>
-                <viewController id="X6w-Lg-XnL" customClass="SelectATMViewController" customModule="NoneAttm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="X6w-Lg-XnL" customClass="SelectATMViewController" customModule="NoneAttm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hoU-fL-Tse">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="krL-x3-Cy8" userLabel="UpperTextView">
                                 <rect key="frame" x="20" y="0.0" width="377" height="174"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What ATM are" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRi-hs-5w4">
-                                        <rect key="frame" x="-1" y="124" width="125.66666666666667" height="17"/>
+                                        <rect key="frame" x="-1" y="124" width="141.33333333333334" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="Pm7-kQ-VCX"/>
                                         </constraints>
@@ -34,13 +34,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You looking for?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2R-Q0-Eqr">
-                                        <rect key="frame" x="0.0" y="146.33333333333334" width="144.66666666666666" height="27.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="146.33333333333334" width="160.66666666666666" height="27.666666666666657"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27.670000000000002" id="OPr-98-eri"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="20"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.65098039215686276" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyM-YP-LFL">
-                                        <rect key="frame" x="-2" y="66" width="136.33333333333334" height="42"/>
+                                        <rect key="frame" x="-2" y="66" width="159.66666666666666" height="42"/>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="33"/>
                                         <color key="textColor" red="0.0" green="0.5607843137254902" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -48,11 +51,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="R2R-Q0-Eqr" firstAttribute="top" secondItem="DRi-hs-5w4" secondAttribute="bottom" constant="5.3333333333333428" id="0LU-hg-cLA"/>
-                                    <constraint firstAttribute="bottom" secondItem="R2R-Q0-Eqr" secondAttribute="bottom" id="Aiw-7B-Sq9"/>
+                                    <constraint firstItem="R2R-Q0-Eqr" firstAttribute="leading" secondItem="krL-x3-Cy8" secondAttribute="leading" id="9Sf-xo-Lob"/>
+                                    <constraint firstAttribute="bottom" secondItem="R2R-Q0-Eqr" secondAttribute="bottom" id="DPU-CZ-GEh"/>
                                     <constraint firstItem="DRi-hs-5w4" firstAttribute="top" secondItem="krL-x3-Cy8" secondAttribute="top" constant="124" id="FU9-2O-ugy"/>
                                     <constraint firstItem="tyM-YP-LFL" firstAttribute="top" secondItem="krL-x3-Cy8" secondAttribute="top" constant="66" id="GpL-Ds-tW3"/>
-                                    <constraint firstItem="R2R-Q0-Eqr" firstAttribute="leading" secondItem="krL-x3-Cy8" secondAttribute="leading" id="NZC-9t-kDX"/>
                                     <constraint firstItem="DRi-hs-5w4" firstAttribute="leading" secondItem="krL-x3-Cy8" secondAttribute="leading" constant="-1" id="VuB-gW-gut"/>
                                     <constraint firstItem="tyM-YP-LFL" firstAttribute="centerY" secondItem="krL-x3-Cy8" secondAttribute="centerY" id="asU-YK-beq"/>
                                     <constraint firstItem="DRi-hs-5w4" firstAttribute="top" secondItem="tyM-YP-LFL" secondAttribute="bottom" constant="16" id="dvl-7o-3EG"/>
@@ -60,7 +62,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5w0-tJ-kTK" userLabel="Bank View">
-                                <rect key="frame" x="0.0" y="200" width="414" height="516"/>
+                                <rect key="frame" x="0.0" y="200" width="414" height="536"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qiO-iQ-wQY" userLabel="FNBbutton">
                                         <rect key="frame" x="16" y="52" width="143" height="115"/>
@@ -178,7 +180,7 @@
         <!--Map View Controller-->
         <scene sceneID="4av-of-kQr">
             <objects>
-                <viewController storyboardIdentifier="Mapview" id="RcL-kF-Rl6" customClass="MapViewController" customModule="NoneAttm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Mapview" modalPresentationStyle="fullScreen" id="RcL-kF-Rl6" customClass="MapViewController" customModule="NoneAttm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dij-pU-Xea">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -277,16 +279,16 @@
         <!--Offline View Controller-->
         <scene sceneID="lEd-Lu-Ce7">
             <objects>
-                <viewController id="xn4-ma-FoP" customClass="OfflineViewController" customModule="NoneAttm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="xn4-ma-FoP" customClass="OfflineViewController" customModule="NoneAttm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IPd-m9-YfS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Offline" translatesAutoresizingMaskIntoConstraints="NO" id="qMQ-3t-BbH">
-                                <rect key="frame" x="87" y="336" width="240" height="119"/>
+                                <rect key="frame" x="87" y="221" width="240" height="254"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are offline, connect to the internet." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fnm-71-YQd">
-                                <rect key="frame" x="20" y="463" width="374" height="35"/>
+                                <rect key="frame" x="20" y="483" width="374" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="EMr-Do-4U4"/>
                                 </constraints>
@@ -300,7 +302,7 @@
                             <constraint firstItem="Fnm-71-YQd" firstAttribute="centerX" secondItem="qMQ-3t-BbH" secondAttribute="centerX" id="UKL-FU-pMq"/>
                             <constraint firstItem="Fnm-71-YQd" firstAttribute="top" secondItem="qMQ-3t-BbH" secondAttribute="bottom" constant="8" symbolic="YES" id="VTU-7a-FVp"/>
                             <constraint firstItem="5pt-17-odJ" firstAttribute="bottom" secondItem="Fnm-71-YQd" secondAttribute="bottom" constant="218" id="XB8-i8-Fu3"/>
-                            <constraint firstItem="qMQ-3t-BbH" firstAttribute="top" secondItem="5pt-17-odJ" secondAttribute="top" constant="336" id="dHB-bP-pFV"/>
+                            <constraint firstItem="qMQ-3t-BbH" firstAttribute="top" secondItem="5pt-17-odJ" secondAttribute="top" constant="221" id="dHB-bP-pFV"/>
                             <constraint firstItem="Fnm-71-YQd" firstAttribute="trailing" secondItem="IPd-m9-YfS" secondAttribute="trailingMargin" id="kTi-1i-leb"/>
                             <constraint firstItem="qMQ-3t-BbH" firstAttribute="leading" secondItem="5pt-17-odJ" secondAttribute="leading" constant="87" id="mQT-NY-w7C"/>
                             <constraint firstItem="Fnm-71-YQd" firstAttribute="leading" secondItem="IPd-m9-YfS" secondAttribute="leadingMargin" id="uKy-oz-sj4"/>
@@ -313,11 +315,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EEq-Ab-seL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-71.200000000000003" y="-537.192118226601"/>
+            <point key="canvasLocation" x="-72.463768115942031" y="-537.22826086956525"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="67L-QJ-j6S"/>
+        <segue reference="WC3-af-nR5"/>
         <segue reference="NdM-UP-ktI"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -332,6 +334,6 @@
         <image name="Offline" width="100" height="125"/>
         <image name="SettingsButton" width="66" height="68"/>
         <image name="SettingsImage" width="31" height="31"/>
-        <image name="Standard_Button" width="197" height="164"/>
+        <image name="Standard_Button" width="166" height="136"/>
     </resources>
 </document>

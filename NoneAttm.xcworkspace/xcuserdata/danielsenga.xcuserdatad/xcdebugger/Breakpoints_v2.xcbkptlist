@@ -7,23 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1CC9026A-CC34-44AA-909D-E7E94B3A2AA8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NoneAttm/Panels/PanelMaterial.swift"
-            timestampString = "614639145.1768841"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "D4E73C1D-25C6-426F-9E8F-765DCB5AA6DA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -51,6 +34,70 @@
             endingLineNumber = "192"
             landmarkName = "voting(buttonVote:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E62DDB19-B04E-430D-98B0-0F940DFF5EAF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoneAttm/Panels/PanelMaterial.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
+            landmarkName = "voting(buttonVote:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EAB2CCC0-611E-4DCB-9388-9CAACAED83ED"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NoneAttm/Panels/PanelMaterial.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
+            landmarkName = "voting(buttonVote:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EAB2CCC0-611E-4DCB-9388-9CAACAED83ED - 854acac356b5e16a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NoneAttm.PanelMaterial.voting(buttonVote: Swift.Int) -&gt; ()"
+                  moduleName = "NoneAttm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielsenga/Documents/NoneAttm-FirebaseLocationAtms/NoneAttm/Panels/PanelMaterial.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "259"
+                  endingLineNumber = "259"
+                  offsetFromSymbolStart = "8884">
+               </Location>
+               <Location
+                  uuid = "EAB2CCC0-611E-4DCB-9388-9CAACAED83ED - 5afdc3d8703aa717"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (__C.FIRDataSnapshot) -&gt; () in NoneAttm.PanelMaterial.voting(buttonVote: Swift.Int) -&gt; ()"
+                  moduleName = "NoneAttm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielsenga/Documents/NoneAttm-FirebaseLocationAtms/NoneAttm/Panels/PanelMaterial.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "261"
+                  endingLineNumber = "261"
+                  offsetFromSymbolStart = "159">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

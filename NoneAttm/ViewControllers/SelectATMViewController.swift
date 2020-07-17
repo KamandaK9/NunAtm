@@ -95,7 +95,7 @@ class SelectATMViewController: UIViewController {
     }
     
     
-    @IBAction func ShowName(_ sender: Any) {
+  /*  @IBAction func ShowName(_ sender: Any) {
        
         let alert = UIAlertController(title: "What's your name?", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -116,7 +116,7 @@ class SelectATMViewController: UIViewController {
         
         self.present(alert, animated: true)
         
-    }
+    } */
     
     
    
@@ -154,15 +154,15 @@ class SelectATMViewController: UIViewController {
             //set has AlreadyLaunched to false
             appDelegate.sethasAlreadyLaunched()
             
-            ShowAlert()
+            
         }
-        // Display Name alert
+        
        
     }
     
     // BankView settings
     func BankCardV() {
-        BankCardView.roundCorners([.topLeft], radius: 50)
+        BankCardView.roundCorners([.topLeft, .topRight], radius: 40)
         
         
     }
@@ -175,6 +175,11 @@ class SelectATMViewController: UIViewController {
         backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        if #available(iOS 13.0, *) {
+            backgroundImageView.overrideUserInterfaceStyle = .dark
+        } else {
+            // Fallback on earlier versions
+        }
         
         backgroundImageView.image = UIImage(named: "IphoneXnXS")
         view.sendSubviewToBack(backgroundImageView)
@@ -182,7 +187,7 @@ class SelectATMViewController: UIViewController {
     
     
    
-    func ShowAlert() {
+   /* func ShowAlert() {
         let alert = UIAlertController(title: "What's your name?", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
@@ -201,7 +206,7 @@ class SelectATMViewController: UIViewController {
         }))
         
         self.present(alert, animated: true)
-    }
+    } */
     
     /// Hex -> UIColor conversion
     func hexStringToUIColor (hex:String) -> UIColor {
