@@ -1,43 +1,37 @@
 PODS:
-  - Firebase/CoreOnly (6.26.0):
-    - FirebaseCore (= 6.7.2)
-  - Firebase/Database (6.26.0):
+  - Firebase/CoreOnly (6.28.1):
+    - FirebaseCore (= 6.9.1)
+  - Firebase/Database (6.28.1):
     - Firebase/CoreOnly
-    - FirebaseDatabase (~> 6.2.1)
-  - FirebaseAuthInterop (1.1.0)
-  - FirebaseCore (6.7.2):
+    - FirebaseDatabase (~> 6.4.0)
+  - FirebaseCore (6.9.1):
     - FirebaseCoreDiagnostics (~> 1.3)
-    - FirebaseCoreDiagnosticsInterop (~> 1.2)
-    - GoogleUtilities/Environment (~> 6.5)
-    - GoogleUtilities/Logger (~> 6.5)
-  - FirebaseCoreDiagnostics (1.3.0):
-    - FirebaseCoreDiagnosticsInterop (~> 1.2)
-    - GoogleDataTransportCCTSupport (~> 3.1)
-    - GoogleUtilities/Environment (~> 6.5)
-    - GoogleUtilities/Logger (~> 6.5)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/Logger (~> 6.7)
+  - FirebaseCoreDiagnostics (1.5.0):
+    - GoogleDataTransport (~> 7.0)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/Logger (~> 6.7)
     - nanopb (~> 1.30905.0)
-  - FirebaseCoreDiagnosticsInterop (1.2.0)
-  - FirebaseDatabase (6.2.1):
-    - FirebaseAuthInterop (~> 1.0)
-    - FirebaseCore (~> 6.0)
+  - FirebaseDatabase (6.4.0):
+    - FirebaseCore (~> 6.8)
     - leveldb-library (~> 1.22)
   - GeoFire (4.0.1):
     - Firebase/Database (~> 6.0)
-  - GoogleDataTransport (6.2.1)
-  - GoogleDataTransportCCTSupport (3.1.0):
-    - GoogleDataTransport (~> 6.1)
+  - GoogleDataTransport (7.0.0):
     - nanopb (~> 1.30905.0)
-  - GoogleMaps (3.7.0):
-    - GoogleMaps/Maps (= 3.7.0)
-  - GoogleMaps/Base (3.7.0)
-  - GoogleMaps/Maps (3.7.0):
+  - GoogleMaps (3.9.0):
+    - GoogleMaps/Maps (= 3.9.0)
+  - GoogleMaps/Base (3.9.0)
+  - GoogleMaps/Maps (3.9.0):
     - GoogleMaps/Base
-  - GooglePlaces (3.7.0):
-    - GoogleMaps/Base (= 3.7.0)
-  - GoogleUtilities/Environment (6.6.0):
+  - GooglePlaces (3.9.0):
+    - GoogleMaps/Base (= 3.9.0)
+  - GoogleUtilities/Environment (6.7.1):
     - PromisesObjC (~> 1.2)
-  - GoogleUtilities/Logger (6.6.0):
+  - GoogleUtilities/Logger (6.7.1):
     - GoogleUtilities/Environment
+  - LayoutHelper (0.1.3)
   - leveldb-library (1.22)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
@@ -45,7 +39,7 @@ PODS:
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
   - Panels (2.1.0)
-  - PromisesObjC (1.2.8)
+  - PromisesObjC (1.2.9)
   - ReachabilitySwift (5.0.0)
   - RevealingSplashView (0.6.0)
   - SwiftyJSON (5.0.0)
@@ -55,6 +49,7 @@ DEPENDENCIES:
   - GeoFire (from `https://github.com/firebase/geofire-objc.git`)
   - GoogleMaps
   - GooglePlaces
+  - LayoutHelper
   - Panels
   - ReachabilitySwift
   - RevealingSplashView
@@ -63,16 +58,14 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Firebase
-    - FirebaseAuthInterop
     - FirebaseCore
     - FirebaseCoreDiagnostics
-    - FirebaseCoreDiagnosticsInterop
     - FirebaseDatabase
     - GoogleDataTransport
-    - GoogleDataTransportCCTSupport
     - GoogleMaps
     - GooglePlaces
     - GoogleUtilities
+    - LayoutHelper
     - leveldb-library
     - nanopb
     - Panels
@@ -91,26 +84,24 @@ CHECKOUT OPTIONS:
     :git: https://github.com/firebase/geofire-objc.git
 
 SPEC CHECKSUMS:
-  Firebase: 7cf5f9c67f03cb3b606d1d6535286e1080e57eb6
-  FirebaseAuthInterop: a0f37ae05833af156e72028f648d313f7e7592e9
-  FirebaseCore: f42e5e5f382cdcf6b617ed737bf6c871a6947b17
-  FirebaseCoreDiagnostics: 4a773a47bd83bbd5a9b1ccf1ce7caa8b2d535e67
-  FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
-  FirebaseDatabase: 4e99c0c475d1ee0aa64ae2b53c93f80b7b60d7d9
+  Firebase: ed042590caa0029392257529a8003c25ee82bc18
+  FirebaseCore: 687b8e6a0a4337b898a6326d68254c2f80c143af
+  FirebaseCoreDiagnostics: 7535fe695737f8c5b350584292a70b7f8ff0357b
+  FirebaseDatabase: 55e69fe802ccb438d9c6ee51eb32fd425d5409d3
   GeoFire: 67b5276c561434b4e4c7ea567c2c4d64e711339c
-  GoogleDataTransport: 9a8a16f79feffc7f42096743de2a7c4815e84020
-  GoogleDataTransportCCTSupport: d70a561f7d236af529fee598835caad5e25f6d3d
-  GoogleMaps: 55da829c68aa931f3ae982b9e341cc2f3d89c587
-  GooglePlaces: a62077320f9d64239245af63aa1aa136393ebeb6
-  GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
+  GoogleDataTransport: 8a40cb194ad242b6f6dfe72c14fe40fc67c4dcd7
+  GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
+  GooglePlaces: 1634d019549b969d40fe0ccb0b9513055adebe01
+  GoogleUtilities: e121a3867449ce16b0e35ddf1797ea7a389ffdf2
+  LayoutHelper: 89385ca8de2464665b777265da86c84c1a28a128
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   Panels: cfafe2d0f92387f393a3b5e827af9ffffe46b073
-  PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 1eac9ca7fd9bc4f5168388aa710564b1ac5ecb71
+PODFILE CHECKSUM: 31a923717afb95a3efb21c80d47c8fa9ebd45a48
 
 COCOAPODS: 1.9.3

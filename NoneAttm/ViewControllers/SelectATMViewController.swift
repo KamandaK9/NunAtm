@@ -44,6 +44,10 @@ class SelectATMViewController: UIViewController {
         
     }
     
+    @IBAction func ShowSignUptest(_ sender: Any) {
+        let signup = storyboard?.instantiateViewController(withIdentifier: "ShowSignUp") as! SignLogController
+        present(signup, animated: true, completion: nil)
+    }
     
     @IBAction func AbsaButton(_ sender: Any) {
         let SAbsa = storyboard?.instantiateViewController(withIdentifier: "Mapview") as! MapViewController
@@ -126,8 +130,8 @@ class SelectATMViewController: UIViewController {
         super.viewDidLoad()
 
         setBackground()
-        let User = self.UserInfo.object(forKey: "Name")
-        self.ShowUserName.text = greeting + (User as? String ?? "There")
+       // let User = self.UserInfo.object(forKey: "Name")
+       // self.ShowUserName.text = greeting + (User as? String ?? "There")
         
         // If the network is unreachable show the offline page
         NetworkManager.isUnreachable { _ in
@@ -171,6 +175,7 @@ class SelectATMViewController: UIViewController {
     func setBackground() {
         view.addSubview(backgroundImageView)
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImageView.contentMode = .scaleToFill
         backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -181,7 +186,7 @@ class SelectATMViewController: UIViewController {
             // Fallback on earlier versions
         }
         
-        backgroundImageView.image = UIImage(named: "IphoneXnXS")
+        backgroundImageView.image = UIImage(named: "MainScreen")
         view.sendSubviewToBack(backgroundImageView)
     }
     

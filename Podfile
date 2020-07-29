@@ -11,6 +11,8 @@ pod 'ReachabilitySwift'
 pod 'RevealingSplashView'
 pod 'Firebase/Database'
 pod 'GeoFire', :git => 'https://github.com/firebase/geofire-objc.git'
+pod 'LayoutHelper'
+
 
 
 

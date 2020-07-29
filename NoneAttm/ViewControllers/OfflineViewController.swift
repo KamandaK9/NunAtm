@@ -11,6 +11,7 @@ import UIKit
 
 class OfflineViewController: UIViewController {
     
+    let OfflineScreen = UIImageView()
     let network = NetworkManager.sharedInstance
     
     override func viewDidLoad() {
@@ -19,7 +20,9 @@ class OfflineViewController: UIViewController {
         // If the network is reachable show the main controller
         network.reachability.whenReachable = { _ in
             self.showMainController()
+            
         }
+        self.setBackground()
     }
     
     
@@ -28,5 +31,23 @@ class OfflineViewController: UIViewController {
             self.performSegue(withIdentifier: "MainController", sender: self)
         }
     }
+    
+    func setBackground() {
+          view.addSubview(OfflineScreen)
+          OfflineScreen.translatesAutoresizingMaskIntoConstraints = false
+          OfflineScreen.contentMode = .scaleToFill
+          OfflineScreen.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+          OfflineScreen.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+          OfflineScreen.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+          OfflineScreen.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+          if #available(iOS 13.0, *) {
+              OfflineScreen.overrideUserInterfaceStyle = .dark
+          } else {
+              // Fallback on earlier versions
+          }
+          
+          OfflineScreen.image = UIImage(named: "Offline")
+          view.sendSubviewToBack(OfflineScreen)
+      }
     
 }
