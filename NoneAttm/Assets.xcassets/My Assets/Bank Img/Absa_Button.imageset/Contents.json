@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Absa_Buttonn.png",
+      "filename" : "ABSA.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Absa_Buttonn@2x.png",
+      "filename" : "ABSA@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Absa_Buttonn@3x.png",
+      "filename" : "ABSA@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

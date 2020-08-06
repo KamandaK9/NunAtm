@@ -8,8 +8,7 @@
 
 import UIKit
 import GoogleMaps
-import RevealingSplashView
-import Firebase
+import FirebaseCore
 
 let googleApiKey = "AIzaSyBgAjsJmrTCRkgYWUo3atbhqccJw6Ly_bc"
 
@@ -21,20 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var hasAlreadyLaunched :Bool!
     
 
-   // let revealSplashView = RevealingSplashView(iconImage: UIImage(named: "NALogo")!, iconInitialSize: CGSize(width: 156, height: 127), backgroundImage: UIImage(named:"Splashh")!)
+  
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        //window = UIWindow()
+        
         
         GMSServices.provideAPIKey(googleApiKey)
+        FirebaseApp.configure()
         
-        //Thread.sleep(forTimeInterval: 2.0)
-        
-        ///Initiation of LaunchViewController and continu the flow
-      /*  let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! LaunchViewController
-        window?.rootViewController = vc
-        window?.makeKeyAndVisible() */
+      
         
         //retrieve value from local store, if value doesn't exist then false is returned
         hasAlreadyLaunched = UserDefaults.standard.bool(forKey: "hasAlreadyLaunched")
@@ -52,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.addSubview(revealSplashView)
         revealSplashView.startAnimation() */
         
-        FirebaseApp.configure()
+        
         
         return true
     }

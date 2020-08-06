@@ -41,7 +41,6 @@ PODS:
   - Panels (2.1.0)
   - PromisesObjC (1.2.9)
   - ReachabilitySwift (5.0.0)
-  - RevealingSplashView (0.6.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
@@ -52,7 +51,6 @@ DEPENDENCIES:
   - LayoutHelper
   - Panels
   - ReachabilitySwift
-  - RevealingSplashView
   - SwiftyJSON
 
 SPEC REPOS:
@@ -71,7 +69,6 @@ SPEC REPOS:
     - Panels
     - PromisesObjC
     - ReachabilitySwift
-    - RevealingSplashView
     - SwiftyJSON
 
 EXTERNAL SOURCES:
@@ -99,9 +96,8 @@ SPEC CHECKSUMS:
   Panels: cfafe2d0f92387f393a3b5e827af9ffffe46b073
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
-  RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 31a923717afb95a3efb21c80d47c8fa9ebd45a48
+PODFILE CHECKSUM: a2e6c4a052e2992347cbe1f934da925ec307e292
 
 COCOAPODS: 1.9.3

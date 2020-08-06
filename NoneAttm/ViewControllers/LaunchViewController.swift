@@ -52,7 +52,7 @@ class LaunchViewController: UIViewController {
         backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
-        backgroundImageView.image = UIImage(named: "IphoneXnXS")
+        backgroundImageView.image = UIImage(named: "MainScreen")
         view.sendSubviewToBack(backgroundImageView)
     }
     

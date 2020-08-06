@@ -127,6 +127,7 @@ class MapViewController: UIViewController {
         panelConfiguration.animateEntry = true
         panelConfiguration.respondToDrag = true
         panelConfiguration.closeOutsideTap = true
+        panelConfiguration.useSafeArea = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.panelManager.show(panel: panel, config: self.panelConfiguration)
         }

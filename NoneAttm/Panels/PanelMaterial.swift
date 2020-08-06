@@ -72,6 +72,7 @@ class PanelMaterial: UIViewController, Panelable {
         detailsLocation.minimumScaleFactor = 0.5
         detailsLocation.sizeToFit()
         
+        
             
         }
     
@@ -87,7 +88,7 @@ class PanelMaterial: UIViewController, Panelable {
     headerTitle.text = Atmheading
     detailsLocation.text = Atmloc
     
-    PanelView()
+    
    
     }
     
@@ -157,8 +158,7 @@ class PanelMaterial: UIViewController, Panelable {
     }
     
     func PanelView() {
-         Panel.roundCorners([.topLeft,.topRight], radius: 20)
-         headerPanel.roundCorners([.topLeft,.topRight], radius: 20)
+        headerPanel.roundCorners([.topLeft,.topRight], radius: 20)
     
     }
     

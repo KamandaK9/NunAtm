@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Capitech.png",
+      "filename" : "Capitec.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Capitech@2x.png",
+      "filename" : "Capitec@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Capitech@3x.png",
+      "filename" : "Capitec@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "MainScreen.png",
+      "filename" : "MainScreenPlain.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "MainScreen@2x.png",
+      "filename" : "MainScreenPlain@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "MainScreen@3x.png",
+      "filename" : "MainScreenPlain@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

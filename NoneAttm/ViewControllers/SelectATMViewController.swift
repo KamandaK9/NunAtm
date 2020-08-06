@@ -13,16 +13,16 @@ import UIKit
 class SelectATMViewController: UIViewController {
 
     
- @IBOutlet weak var BankCardView: UIView!
+
  let backgroundImageView = UIImageView()
  let UserInfo = UserDefaults.standard
  let greeting = "Hi, "
     
-
     
  let appDelegate = UIApplication.shared.delegate as! AppDelegate
  let network: NetworkManager = NetworkManager.sharedInstance
- 
+    @IBOutlet weak var HeaderBlck: UIView!
+    
     @IBOutlet weak var ShowUserName: UILabel!
     
     @IBAction func RemoveFirstLaunch(_ sender: Any) {
@@ -130,6 +130,7 @@ class SelectATMViewController: UIViewController {
         super.viewDidLoad()
 
         setBackground()
+        
        // let User = self.UserInfo.object(forKey: "Name")
        // self.ShowUserName.text = greeting + (User as? String ?? "There")
         
@@ -138,10 +139,6 @@ class SelectATMViewController: UIViewController {
             self.showOfflinePage()
         }
         
-        
-        BankCardV()
-        
-     
     }
   
     
@@ -164,27 +161,17 @@ class SelectATMViewController: UIViewController {
        
     }
     
-    // BankView settings
-    func BankCardV() {
-        BankCardView.roundCorners([.topLeft, .topRight], radius: 40)
-        
-        
-    }
     
     
     func setBackground() {
         view.addSubview(backgroundImageView)
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-        backgroundImageView.contentMode = .scaleToFill
+        backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        if #available(iOS 13.0, *) {
-            backgroundImageView.overrideUserInterfaceStyle = .dark
-        } else {
-            // Fallback on earlier versions
-        }
+        
         
         backgroundImageView.image = UIImage(named: "MainScreen")
         view.sendSubviewToBack(backgroundImageView)
@@ -261,4 +248,16 @@ extension UIView {
         mask.path = path.cgPath
         self.layer.mask = mask
 }
+    
+    func dropShadow() {
+           self.layer.masksToBounds = false
+           self.layer.shadowColor = UIColor.black.cgColor
+           self.layer.shadowOpacity = 0.2
+           self.layer.shadowOffset = CGSize(width: 0, height: 5)
+           self.layer.shadowRadius = 10
+           self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+           self.layer.shouldRasterize = true
+           self.layer.rasterizationScale = UIScreen.main.scale
+
+       }
 }

@@ -15,6 +15,8 @@
 		0C1451D224CF467000B19128 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C49416424CE59CE00F80449 /* Assets.xcassets */; };
 		0C1B986224818503007062AF /* PathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B986024818502007062AF /* PathManager.swift */; };
 		0C1B986324818503007062AF /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B986124818503007062AF /* NetworkEngine.swift */; };
+		0C20772624DB682C00D1DB11 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20772524DB682C00D1DB11 /* RoundView.swift */; };
+		0C20772824DB828100D1DB11 /* ButtonXtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20772724DB828100D1DB11 /* ButtonXtras.swift */; };
 		0C20A953241A7E8E00C88E3C /* NAButtonFNB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20A952241A7E8E00C88E3C /* NAButtonFNB.swift */; };
 		0C276AEF2474495B00AE3B6A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C276AEE2474495B00AE3B6A /* NetworkManager.swift */; };
 		0C276AF124744AEB00AE3B6A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C276AF024744AEB00AE3B6A /* LaunchViewController.swift */; };
@@ -69,6 +71,8 @@
 		0C06295323DC95DE000DB1C7 /* GoogleDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleDataProvider.swift; sourceTree = "<group>"; };
 		0C1B986024818502007062AF /* PathManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathManager.swift; sourceTree = "<group>"; };
 		0C1B986124818503007062AF /* NetworkEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
+		0C20772524DB682C00D1DB11 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
+		0C20772724DB828100D1DB11 /* ButtonXtras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonXtras.swift; sourceTree = "<group>"; };
 		0C20A952241A7E8E00C88E3C /* NAButtonFNB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NAButtonFNB.swift; sourceTree = "<group>"; };
 		0C276AEE2474495B00AE3B6A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0C276AF024744AEB00AE3B6A /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
@@ -143,8 +147,10 @@
 			isa = PBXGroup;
 			children = (
 				0C6F0A0F24728A6A00B9B69A /* PassthroughView.swift */,
+				0C20772524DB682C00D1DB11 /* RoundView.swift */,
 				0C63E53A24962B4C00807FF6 /* GradientView.swift */,
 				0C20A952241A7E8E00C88E3C /* NAButtonFNB.swift */,
+				0C20772724DB828100D1DB11 /* ButtonXtras.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -495,10 +501,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C20A953241A7E8E00C88E3C /* NAButtonFNB.swift in Sources */,
+				0C20772624DB682C00D1DB11 /* RoundView.swift in Sources */,
 				0C276AF124744AEB00AE3B6A /* LaunchViewController.swift in Sources */,
 				0C6F0A1024728A6A00B9B69A /* PassthroughView.swift in Sources */,
 				0C059EEB248A82FD0060DFA9 /* ATMmodel.swift in Sources */,
 				0C276AEF2474495B00AE3B6A /* NetworkManager.swift in Sources */,
+				0C20772824DB828100D1DB11 /* ButtonXtras.swift in Sources */,
 				0C1B986324818503007062AF /* NetworkEngine.swift in Sources */,
 				0C06295423DC95DE000DB1C7 /* GoogleDataProvider.swift in Sources */,
 				0C06295023DC8F14000DB1C7 /* PlaceMarker.swift in Sources */,

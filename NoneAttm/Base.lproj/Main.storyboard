@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4cU-P6-mOx">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -12,159 +12,116 @@
         <scene sceneID="JjC-4x-InC">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="X6w-Lg-XnL" customClass="SelectATMViewController" customModule="NoneAttm" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hoU-fL-Tse">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="view" contentMode="scaleAspectFit" id="hoU-fL-Tse">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5w0-tJ-kTK" userLabel="Bank View">
-                                <rect key="frame" x="0.0" y="224" width="414" height="541"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qiO-iQ-wQY" userLabel="FNBbutton">
-                                        <rect key="frame" x="16" y="52" width="143" height="115"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="143" id="7MW-5P-TyV"/>
-                                            <constraint firstAttribute="height" constant="115" id="UgN-lh-MpE"/>
-                                        </constraints>
-                                        <state key="normal" image="Fnb_Button"/>
-                                        <connections>
-                                            <action selector="FNBButton:" destination="X6w-Lg-XnL" eventType="touchUpInside" id="O4v-D0-5J1"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJa-8z-GWA" userLabel="Nedbank">
-                                        <rect key="frame" x="16" y="197" width="143" height="115"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="115" id="foJ-WQ-GlB"/>
-                                        </constraints>
-                                        <state key="normal" image="Nedbank_Button"/>
-                                        <connections>
-                                            <action selector="NedbankButton:" destination="X6w-Lg-XnL" eventType="touchUpInside" id="6Xb-vu-oz3"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbV-sk-tBA">
-                                        <rect key="frame" x="235" y="480" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="RemoveFirstLaunch:" destination="X6w-Lg-XnL" eventType="touchUpInside" id="E9N-iN-ocV"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azt-zj-myr" userLabel="Capitecbutton">
-                                        <rect key="frame" x="255" y="197" width="143" height="115"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="115" id="Gqe-f4-mpl"/>
-                                            <constraint firstAttribute="width" constant="143" id="lny-XS-DME"/>
-                                        </constraints>
-                                        <state key="normal" image="Capitec_Button"/>
-                                        <connections>
-                                            <action selector="CapitecButton:" destination="X6w-Lg-XnL" eventType="touchUpInside" id="EIV-Pz-Ja6"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkR-lD-TIn" userLabel="Standardbutton">
-                                        <rect key="frame" x="16" y="342" width="143" height="115"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="115" id="Ndf-Zz-bte"/>
-                                        </constraints>
-                                        <state key="normal" image="Standard_Button"/>
-                                        <connections>
-                                            <action selector="StandbardButton:" destination="X6w-Lg-XnL" eventType="touchUpInside" id="WdT-MO-ciq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aue-KX-uja" userLabel="Absa">
-                                        <rect key="frame" x="255" y="52" width="143" height="115"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="143" id="dl1-T6-GfG"/>
-                                            <constraint firstAttribute="height" constant="115" id="rFH-3f-yPq"/>
-                                        </constraints>
-                                        <state key="normal" image="Absa_Button"/>
-                                        <connections>
-                                            <action selector="AbsaButton:" destination="X6w-Lg-XnL" eventType="touchUpInside" id="Sux-Ds-5Ag"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Beq-lj-FTm">
-                                        <rect key="frame" x="161" y="480" width="50" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="SignUp"/>
-                                        <connections>
-                                            <action selector="ShowSignUptest:" destination="X6w-Lg-XnL" eventType="touchUpInside" id="3Fz-eV-RLx"/>
-                                            <segue destination="YdQ-Wd-kQC" kind="show" identifier="ShowSignUp" id="xf7-Zv-cML"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2w-Gl-Ok4" userLabel="Capitecbutton">
-                                        <rect key="frame" x="255" y="342" width="143" height="115"/>
-                                        <state key="normal" image="All_Button">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" red="0.076800461190000002" green="0.078327396369999996" blue="0.076959614600000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="DisplayAllATMS:" destination="X6w-Lg-XnL" eventType="touchUpInside" id="H7a-39-4Uh"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Aue-KX-uja" secondAttribute="trailing" constant="16" id="6C1-PA-oTA"/>
-                                    <constraint firstItem="BkR-lD-TIn" firstAttribute="leading" secondItem="UJa-8z-GWA" secondAttribute="leading" id="DEx-M0-bnv"/>
-                                    <constraint firstItem="Aue-KX-uja" firstAttribute="top" secondItem="5w0-tJ-kTK" secondAttribute="top" constant="52" id="GMr-Os-GdP"/>
-                                    <constraint firstItem="M2w-Gl-Ok4" firstAttribute="leading" secondItem="Azt-zj-myr" secondAttribute="leading" id="JcT-eZ-7Ue"/>
-                                    <constraint firstItem="UJa-8z-GWA" firstAttribute="leading" secondItem="5w0-tJ-kTK" secondAttribute="leading" constant="16" id="M9k-V0-PP5"/>
-                                    <constraint firstItem="BkR-lD-TIn" firstAttribute="trailing" secondItem="UJa-8z-GWA" secondAttribute="trailing" id="Mnu-E0-Q71"/>
-                                    <constraint firstItem="Azt-zj-myr" firstAttribute="top" secondItem="Aue-KX-uja" secondAttribute="bottom" constant="30" id="OQR-Lv-MwX"/>
-                                    <constraint firstAttribute="trailing" secondItem="Azt-zj-myr" secondAttribute="trailing" constant="16" id="QSt-GI-7Y4"/>
-                                    <constraint firstItem="qiO-iQ-wQY" firstAttribute="leading" secondItem="5w0-tJ-kTK" secondAttribute="leading" constant="16" id="V4k-Dn-hkI"/>
-                                    <constraint firstItem="BkR-lD-TIn" firstAttribute="top" secondItem="UJa-8z-GWA" secondAttribute="bottom" constant="30" id="Z1a-ex-i3t"/>
-                                    <constraint firstItem="M2w-Gl-Ok4" firstAttribute="top" secondItem="BkR-lD-TIn" secondAttribute="top" id="bzv-wn-2t7"/>
-                                    <constraint firstItem="M2w-Gl-Ok4" firstAttribute="bottom" secondItem="BkR-lD-TIn" secondAttribute="bottom" id="fGY-T2-xY7"/>
-                                    <constraint firstItem="qiO-iQ-wQY" firstAttribute="top" secondItem="5w0-tJ-kTK" secondAttribute="top" constant="52" id="gWX-RV-cux"/>
-                                    <constraint firstItem="UJa-8z-GWA" firstAttribute="top" secondItem="qiO-iQ-wQY" secondAttribute="bottom" constant="30" id="kCv-62-Gd9"/>
-                                    <constraint firstItem="M2w-Gl-Ok4" firstAttribute="trailing" secondItem="Azt-zj-myr" secondAttribute="trailing" id="n7n-bt-wDd"/>
-                                    <constraint firstItem="MbV-sk-tBA" firstAttribute="top" secondItem="M2w-Gl-Ok4" secondAttribute="bottom" constant="23" id="vNf-NC-vqV"/>
-                                    <constraint firstItem="BkR-lD-TIn" firstAttribute="trailing" secondItem="qiO-iQ-wQY" secondAttribute="trailing" id="xIQ-si-YUE"/>
-                                </constraints>
+                            <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fqc-gN-MiC" customClass="RoundView" customModule="NoneAttm" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
+                                <color key="backgroundColor" red="0.1803921568627451" green="0.71372549019607845" blue="0.17254901960784313" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aue-KX-uja" userLabel="Absa" customClass="ButtonXtras" customModule="NoneAttm" customModuleProvider="target">
+                                <rect key="frame" x="169.5" y="151" width="134.5" height="98"/>
+                                <state key="normal" image="Absa_Button"/>
+                                <connections>
+                                    <action selector="AbsaButton:" destination="X6w-Lg-XnL" eventType="touchUpInside" id="Sux-Ds-5Ag"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4E-eI-cki" userLabel="Standardbutton" customClass="ButtonXtras" customModule="NoneAttm" customModuleProvider="target">
+                                <rect key="frame" x="16" y="257" width="134.5" height="98"/>
+                                <state key="normal" image="Standard_Button"/>
+                                <connections>
+                                    <action selector="StandbardButton:" destination="X6w-Lg-XnL" eventType="touchUpInside" id="Li8-hD-wEP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cf-RK-EmS" userLabel="Nedbank" customClass="ButtonXtras" customModule="NoneAttm" customModuleProvider="target">
+                                <rect key="frame" x="169.5" y="257" width="134.5" height="98"/>
+                                <state key="normal" image="Nedbank_Button"/>
+                                <connections>
+                                    <action selector="NedbankButton:" destination="X6w-Lg-XnL" eventType="touchUpInside" id="501-ol-LXo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azt-zj-myr" userLabel="Capitecbutton" customClass="ButtonXtras" customModule="NoneAttm" customModuleProvider="target">
+                                <rect key="frame" x="16" y="363" width="134.5" height="98"/>
+                                <state key="normal" image="Capitec_Button"/>
+                                <connections>
+                                    <action selector="CapitecButton:" destination="X6w-Lg-XnL" eventType="touchUpInside" id="EIV-Pz-Ja6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2w-Gl-Ok4" userLabel="Capitecbutton" customClass="ButtonXtras" customModule="NoneAttm" customModuleProvider="target">
+                                <rect key="frame" x="169.5" y="363" width="134.5" height="98"/>
+                                <state key="normal" image="All_Button">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.076800461190000002" green="0.078327396369999996" blue="0.076959614600000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="DisplayAllATMS:" destination="X6w-Lg-XnL" eventType="touchUpInside" id="H7a-39-4Uh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qiO-iQ-wQY" userLabel="FNBbutton" customClass="ButtonXtras" customModule="NoneAttm" customModuleProvider="target">
+                                <rect key="frame" x="16" y="151" width="134.5" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="98" id="jot-QT-wxK"/>
+                                </constraints>
+                                <state key="normal" image="Fnb_Button"/>
+                                <connections>
+                                    <action selector="FNBButton:" destination="X6w-Lg-XnL" eventType="touchUpInside" id="O4v-D0-5J1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5w0-tJ-kTK" firstAttribute="trailing" secondItem="tF0-A0-Lf5" secondAttribute="trailing" id="0JT-Yo-y7o"/>
-                            <constraint firstItem="5w0-tJ-kTK" firstAttribute="top" secondItem="tF0-A0-Lf5" secondAttribute="top" constant="180" id="W4C-xk-U0i" customClass="NSLayoutHelper" customModule="LayoutHelper">
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone4s">
-                                        <real key="value" value="140"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
-                                        <real key="value" value="160"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXS">
-                                        <real key="value" value="220"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXMax">
-                                        <real key="value" value="240"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXR">
-                                        <real key="value" value="220"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </constraint>
-                            <constraint firstItem="5w0-tJ-kTK" firstAttribute="leading" secondItem="tF0-A0-Lf5" secondAttribute="leading" id="d4U-xx-IKe"/>
-                            <constraint firstItem="tF0-A0-Lf5" firstAttribute="bottom" secondItem="5w0-tJ-kTK" secondAttribute="bottom" constant="97" id="pII-pj-uwW"/>
+                            <constraint firstItem="Azt-zj-myr" firstAttribute="width" secondItem="8cf-RK-EmS" secondAttribute="width" id="0MD-3K-IIc"/>
+                            <constraint firstItem="qiO-iQ-wQY" firstAttribute="width" secondItem="hoU-fL-Tse" secondAttribute="width" multiplier="0.42" id="1QL-R0-Ag7"/>
+                            <constraint firstItem="Azt-zj-myr" firstAttribute="height" secondItem="8cf-RK-EmS" secondAttribute="height" id="301-2k-wcg"/>
+                            <constraint firstItem="Azt-zj-myr" firstAttribute="leading" secondItem="tF0-A0-Lf5" secondAttribute="leading" constant="16" id="378-sk-QI2"/>
+                            <constraint firstItem="b4E-eI-cki" firstAttribute="leading" secondItem="tF0-A0-Lf5" secondAttribute="leading" constant="16" id="7Ah-Pa-uVC"/>
+                            <constraint firstItem="tF0-A0-Lf5" firstAttribute="trailing" secondItem="8cf-RK-EmS" secondAttribute="trailing" constant="16" id="8Gc-AU-voB"/>
+                            <constraint firstItem="Fqc-gN-MiC" firstAttribute="width" secondItem="hoU-fL-Tse" secondAttribute="width" id="H1s-lX-6hL"/>
+                            <constraint firstItem="Aue-KX-uja" firstAttribute="width" secondItem="qiO-iQ-wQY" secondAttribute="width" id="H4R-YN-qtU"/>
+                            <constraint firstItem="qiO-iQ-wQY" firstAttribute="leading" secondItem="tF0-A0-Lf5" secondAttribute="leading" constant="16" id="LtQ-Va-vGQ"/>
+                            <constraint firstItem="M2w-Gl-Ok4" firstAttribute="width" secondItem="Azt-zj-myr" secondAttribute="width" id="R8t-oP-uGY"/>
+                            <constraint firstItem="Fqc-gN-MiC" firstAttribute="height" secondItem="hoU-fL-Tse" secondAttribute="height" multiplier="0.3" id="TWs-pg-sQU"/>
+                            <constraint firstItem="Azt-zj-myr" firstAttribute="top" secondItem="b4E-eI-cki" secondAttribute="bottom" constant="8" id="VTg-r5-wKU"/>
+                            <constraint firstItem="b4E-eI-cki" firstAttribute="top" secondItem="qiO-iQ-wQY" secondAttribute="bottom" constant="8" id="Vbx-Bt-VIr"/>
+                            <constraint firstItem="Aue-KX-uja" firstAttribute="height" secondItem="qiO-iQ-wQY" secondAttribute="height" id="W5B-9X-d4u"/>
+                            <constraint firstItem="Fqc-gN-MiC" firstAttribute="leading" secondItem="tF0-A0-Lf5" secondAttribute="leading" id="WhO-a3-EkP"/>
+                            <constraint firstItem="M2w-Gl-Ok4" firstAttribute="top" secondItem="8cf-RK-EmS" secondAttribute="bottom" constant="8" id="XcN-LJ-dvZ"/>
+                            <constraint firstItem="qiO-iQ-wQY" firstAttribute="top" secondItem="Fqc-gN-MiC" secondAttribute="bottom" constant="7" id="Zff-ja-JYp"/>
+                            <constraint firstItem="Fqc-gN-MiC" firstAttribute="trailing" secondItem="tF0-A0-Lf5" secondAttribute="trailing" id="cgi-H8-JdC"/>
+                            <constraint firstItem="8cf-RK-EmS" firstAttribute="width" secondItem="b4E-eI-cki" secondAttribute="width" id="ckh-bc-FU2"/>
+                            <constraint firstItem="tF0-A0-Lf5" firstAttribute="bottom" secondItem="M2w-Gl-Ok4" secondAttribute="bottom" constant="19" id="ee5-ja-XAf"/>
+                            <constraint firstItem="tF0-A0-Lf5" firstAttribute="bottom" secondItem="Azt-zj-myr" secondAttribute="bottom" constant="19" id="idk-eT-RJT"/>
+                            <constraint firstItem="tF0-A0-Lf5" firstAttribute="trailing" secondItem="M2w-Gl-Ok4" secondAttribute="trailing" constant="16" id="lGB-BU-znd"/>
+                            <constraint firstItem="b4E-eI-cki" firstAttribute="width" secondItem="qiO-iQ-wQY" secondAttribute="width" id="mLD-FY-No4"/>
+                            <constraint firstItem="Aue-KX-uja" firstAttribute="top" secondItem="Fqc-gN-MiC" secondAttribute="bottom" constant="7" id="nmw-1m-gT7"/>
+                            <constraint firstItem="Fqc-gN-MiC" firstAttribute="top" secondItem="tF0-A0-Lf5" secondAttribute="top" id="nyL-l3-uUD"/>
+                            <constraint firstItem="8cf-RK-EmS" firstAttribute="top" secondItem="Aue-KX-uja" secondAttribute="bottom" constant="8" id="pA6-DS-obw"/>
+                            <constraint firstItem="M2w-Gl-Ok4" firstAttribute="height" secondItem="Azt-zj-myr" secondAttribute="height" id="sZQ-yb-H93"/>
+                            <constraint firstItem="tF0-A0-Lf5" firstAttribute="trailing" secondItem="Aue-KX-uja" secondAttribute="trailing" constant="16" id="tbh-J4-YhF"/>
+                            <constraint firstItem="b4E-eI-cki" firstAttribute="height" secondItem="qiO-iQ-wQY" secondAttribute="height" id="vJo-Ed-QCb"/>
+                            <constraint firstItem="8cf-RK-EmS" firstAttribute="height" secondItem="b4E-eI-cki" secondAttribute="height" id="zFT-RW-1Ws"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tF0-A0-Lf5"/>
                     </view>
                     <connections>
-                        <outlet property="BankCardView" destination="5w0-tJ-kTK" id="1Mx-9q-1Jb"/>
+                        <outlet property="HeaderBlck" destination="Fqc-gN-MiC" id="rx4-Rn-YNO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u4g-pj-vXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-72.463768115942031" y="301.33928571428572"/>
+            <point key="canvasLocation" x="-73.125" y="300"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="4av-of-kQr">
             <objects>
                 <viewController storyboardIdentifier="Mapview" modalPresentationStyle="fullScreen" id="RcL-kF-Rl6" customClass="MapViewController" customModule="NoneAttm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dij-pU-Xea">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7r-dY-9RO" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="YES"/>
@@ -172,7 +129,7 @@
                                 <gestureRecognizers/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z4T-hE-3hq" customClass="PassthroughView" customModule="NoneAttm" customModuleProvider="target">
-                                <rect key="frame" x="16" y="69" width="382" height="144"/>
+                                <rect key="frame" x="16" y="25" width="288" height="144"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWW-gL-NAF" userLabel="BackButton">
                                         <rect key="frame" x="0.0" y="8" width="68" height="68"/>
@@ -183,14 +140,14 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzS-yY-CtV" userLabel="SettingsButton">
-                                        <rect key="frame" x="314" y="8" width="68" height="68"/>
+                                        <rect key="frame" x="220" y="8" width="68" height="68"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="68" id="Mg2-BY-xqK"/>
                                         </constraints>
                                         <state key="normal" image="SettingsImage" backgroundImage="SettingsButton"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEc-aq-Lnu" userLabel="LocationButton">
-                                        <rect key="frame" x="314" y="76" width="68" height="68"/>
+                                        <rect key="frame" x="220" y="76" width="68" height="68"/>
                                         <state key="normal" image="LocationEmpty" backgroundImage="LocationButton"/>
                                         <state key="selected" image="LocationSelected"/>
                                         <connections>
@@ -241,7 +198,7 @@
             <objects>
                 <viewController storyboardIdentifier="LaunchViewContrller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4cU-P6-mOx" customClass="LaunchViewController" customModule="NoneAttm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q83-kp-H24">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="R0v-c7-7iM"/>
                     </view>
@@ -259,7 +216,7 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="xn4-ma-FoP" customClass="OfflineViewController" customModule="NoneAttm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IPd-m9-YfS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5pt-17-odJ"/>
@@ -277,15 +234,15 @@
             <objects>
                 <viewController storyboardIdentifier="ShowSignUp" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YdQ-Wd-kQC" customClass="SignLogController" customModule="NoneAttm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jRT-ud-p2I">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKl-3c-EE3" userLabel="WelcomeView">
-                                <rect key="frame" x="0.0" y="312" width="414" height="584"/>
+                                <rect key="frame" x="0.0" y="312" width="320" height="168"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NALogo" translatesAutoresizingMaskIntoConstraints="NO" id="PLc-O1-oGd">
-                                <rect key="frame" x="81" y="85" width="253" height="205"/>
+                                <rect key="frame" x="81" y="41" width="159" height="249"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -313,13 +270,13 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="WC3-af-nR5"/>
-        <segue reference="NdM-UP-ktI"/>
+        <segue reference="uDx-7a-AEd"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Absa_Button" width="166" height="136"/>
+        <image name="Absa_Button" width="169" height="139"/>
         <image name="All_Button" width="166" height="136"/>
         <image name="BackButton" width="68" height="68"/>
-        <image name="Capitec_Button" width="166" height="136"/>
+        <image name="Capitec_Button" width="169" height="139"/>
         <image name="Fnb_Button" width="166" height="136"/>
         <image name="LocationButton" width="66" height="68"/>
         <image name="LocationEmpty" width="36" height="37.5"/>

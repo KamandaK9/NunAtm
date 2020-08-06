@@ -35,7 +35,7 @@ class OfflineViewController: UIViewController {
     func setBackground() {
           view.addSubview(OfflineScreen)
           OfflineScreen.translatesAutoresizingMaskIntoConstraints = false
-          OfflineScreen.contentMode = .scaleToFill
+          OfflineScreen.contentMode = .scaleAspectFill
           OfflineScreen.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
           OfflineScreen.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
           OfflineScreen.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
