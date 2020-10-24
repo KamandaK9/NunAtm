@@ -15,7 +15,7 @@ class PanelMaterial: UIViewController, Panelable {
     var Location: String!
     let AtmInfo = UserDefaults.standard
     
-    var ref: DatabaseReference!
+   // var ref: DatabaseReference!
     
     var noVotes = true
     var userVotedUP = false
@@ -45,22 +45,40 @@ class PanelMaterial: UIViewController, Panelable {
     
     @IBOutlet weak var LblWalkMin: UILabel!
     
+    @IBOutlet weak var VoteView: UIStackView!
+    @IBOutlet weak var InfoSelect: UIButton!
+    
+    @IBOutlet weak var VoteSelect: UIButton!
+    
+    @IBAction func InfoShow(_ sender: Any) {
+        VoteView.isHidden = true
+        InfoSelect.isSelected = true
+        VoteSelect.isSelected = false
+    }
+    
+    @IBAction func VoteShow(_ sender: Any) {
+        VoteView.isHidden = false
+        VoteSelect.isSelected = true
+        InfoSelect.isSelected = false
+    }
     
     override func viewDidLoad() {
         view.layoutIfNeeded()
         super.viewDidLoad()
         
-        ref = Database.database().reference(fromURL: "https://noneatm-atms-locations-data.firebaseio.com/")
+        
+        
+     //   ref = Database.database().reference(fromURL: "https://noneatm-atms-locations-data.firebaseio.com/")
         
         DispatchQueue.main.async {
          
         NotificationCenter.default.addObserver(self, selector: #selector(self.atmtitleshow(notification:)), name: Notification.Name("UserTappedMarker"), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.AtmVotesShow(notification:)), name: Notification.Name("ATMVotes"), object: nil)
+     //   NotificationCenter.default.addObserver(self, selector: #selector(self.AtmVotesShow(notification:)), name: Notification.Name("ATMVotes"), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.DrivingMode(notification:)), name: Notification.Name("DrivingMode"), object: nil)
+    //    NotificationCenter.default.addObserver(self, selector: #selector(self.DrivingMode(notification:)), name: Notification.Name("DrivingMode"), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.WalkingMode(notification:)), name: Notification.Name("WalkingMode"), object: nil)
+    //    NotificationCenter.default.addObserver(self, selector: #selector(self.WalkingMode(notification:)), name: Notification.Name("WalkingMode"), object: nil)
         
         }
         headerTitle.text = "Select Location"
@@ -68,9 +86,9 @@ class PanelMaterial: UIViewController, Panelable {
         headerTitle.minimumScaleFactor = 0.5
         headerTitle.sizeToFit()
         //headerTitle.preferredMaxLayoutWidth = 150
-        detailsLocation.adjustsFontSizeToFitWidth = true
+       /* detailsLocation.adjustsFontSizeToFitWidth = true
         detailsLocation.minimumScaleFactor = 0.5
-        detailsLocation.sizeToFit()
+        detailsLocation.sizeToFit() */
         
         
             
@@ -86,13 +104,13 @@ class PanelMaterial: UIViewController, Panelable {
     }
     
     headerTitle.text = Atmheading
-    detailsLocation.text = Atmloc
+   // detailsLocation.text = Atmloc
     
     
    
     }
     
-    @objc func AtmVotesShow(notification: Notification) {
+/*    @objc func AtmVotesShow(notification: Notification) {
         guard let userInfo = notification.userInfo,
             let UpCount = userInfo["VotesUp"] as? String,
             let uid = userInfo["uid"] as? String,
@@ -299,6 +317,7 @@ class PanelMaterial: UIViewController, Panelable {
             }
         }
     }
+ */
 }
 
 

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Ned_pin_1.png",
+      "filename" : "Ned_Pin.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Ned_pin_1@2x.png",
+      "filename" : "Ned_Pin@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Ned_pin_1@3x.png",
+      "filename" : "Ned_Pin@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

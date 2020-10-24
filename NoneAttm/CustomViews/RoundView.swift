@@ -13,8 +13,9 @@ class RoundView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        self.roundCorners(.bottomLeft, radius: 70)
-        dropShadow()
+        self.roundCorners(.allCorners, radius: 20)
+        
+        
     }
 }
 

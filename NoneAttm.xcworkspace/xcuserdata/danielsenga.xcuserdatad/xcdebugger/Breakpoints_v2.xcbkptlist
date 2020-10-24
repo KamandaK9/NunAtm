@@ -7,38 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D4E73C1D-25C6-426F-9E8F-765DCB5AA6DA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NoneAttm/Panels/PanelMaterial.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "voting(buttonVote:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BF685F47-57BC-4D0D-B546-094D80C83BE9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NoneAttm/Panels/PanelMaterial.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
-            landmarkName = "voting(buttonVote:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "E62DDB19-B04E-430D-98B0-0F940DFF5EAF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -46,10 +14,10 @@
             filePath = "NoneAttm/Panels/PanelMaterial.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
-            landmarkName = "voting(buttonVote:)"
-            landmarkType = "7">
+            startingLineNumber = "304"
+            endingLineNumber = "304"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -62,13 +30,13 @@
             filePath = "NoneAttm/Panels/PanelMaterial.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
-            landmarkName = "voting(buttonVote:)"
-            landmarkType = "7">
+            startingLineNumber = "277"
+            endingLineNumber = "277"
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
-                  uuid = "EAB2CCC0-611E-4DCB-9388-9CAACAED83ED - 854acac356b5e16a"
+                  uuid = "EAB2CCC0-611E-4DCB-9388-9CAACAED83ED - 209cdfa6c7cada37"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -83,7 +51,7 @@
                   offsetFromSymbolStart = "8884">
                </Location>
                <Location
-                  uuid = "EAB2CCC0-611E-4DCB-9388-9CAACAED83ED - 5afdc3d8703aa717"
+                  uuid = "EAB2CCC0-611E-4DCB-9388-9CAACAED83ED - ff2bd6bde1459c08"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"

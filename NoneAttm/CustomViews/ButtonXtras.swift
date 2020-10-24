@@ -13,6 +13,7 @@ import UIKit
 class ButtonXtras: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
+        roundCorners(.allCorners, radius: 30)
         dropShadow()
     }
 }

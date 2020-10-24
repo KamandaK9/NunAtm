@@ -40,11 +40,6 @@ class OfflineViewController: UIViewController {
           OfflineScreen.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
           OfflineScreen.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
           OfflineScreen.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-          if #available(iOS 13.0, *) {
-              OfflineScreen.overrideUserInterfaceStyle = .dark
-          } else {
-              // Fallback on earlier versions
-          }
           
           OfflineScreen.image = UIImage(named: "Offline")
           view.sendSubviewToBack(OfflineScreen)

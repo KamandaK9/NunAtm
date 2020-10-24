@@ -79,7 +79,7 @@
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#757575"
+        "color": "#9e9e9e"
       }
     ]
   },
@@ -87,7 +87,7 @@
     "featureType": "poi.attraction",
     "stylers": [
       {
-        "visibility": "on"
+        "visibility": "off"
       }
     ]
   },
@@ -95,7 +95,7 @@
       "featureType": "poi.medical",
       "stylers": [
           {
-              "visibility": "on"
+              "visibility": "off"
           }
       ]
   },
@@ -139,7 +139,7 @@
       "featureType": "poi.school",
       "stylers": [
           {
-              "visibility": "on"
+              "visibility": "off"
           }
       ]
   },
@@ -152,7 +152,7 @@
         "color": "#6eda01"
       },
       {
-        "visibility": "on"
+        "visibility": "off"
       },
       {
         "weight": 8
@@ -167,7 +167,7 @@
               "color": "#00000"
           },
           {
-              "visibility": "on"
+              "visibility": "off"
           }
       ]
   },

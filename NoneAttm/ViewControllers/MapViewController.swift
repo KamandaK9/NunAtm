@@ -15,9 +15,9 @@ import SwiftyJSON
 
 
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, GMSMapViewDelegate {
     
-    var ref: DatabaseReference!
+    //var ref: DatabaseReference!
     
     
     
@@ -47,19 +47,13 @@ class MapViewController: UIViewController {
     
     @IBAction func PressLocation( _ sender: UIButton)  {
         
-        let image1:UIImage = UIImage(named: "LocationEmpty")!
-        let image2:UIImage = UIImage(named: "LocationSelected")!
-        LocationButton.setImage(image1, for: UIControl.State.normal)
-        LocationButton.setImage(image2, for: UIControl.State.selected)
-        LocationButton.imageView!.animationImages = [image1, image2]
-        LocationButton.imageView!.animationDuration = 1.5
-        LocationButton.imageView!.animationRepeatCount = 1
-        LocationButton.imageView!.startAnimating()
+        
+        //let image2:UIImage = UIImage(named: "LocationSelected")!
+       // LocationButton.setImage(image2, for: UIControl.State.selected)
+        LocationButton.isSelected = true
         
         
         self.didTapMyLocationButton(for: mapView)
-        
-        
     }
     
     @IBAction func BackButton(_ sender: Any) {
@@ -76,7 +70,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref = Database.database().reference(fromURL: "https://noneatm-atms-locations-data.firebaseio.com/")
+       // ref = Database.database().reference(fromURL: "https://noneatm-atms-locations-data.firebaseio.com/")
     
         /// Custom mapView style initialization
         self.mapView.mapStyle(withFilename: "NatureGreen", andType:"json")
@@ -213,8 +207,8 @@ extension MapViewController: CLLocationManagerDelegate {
 
 
 
-extension MapViewController: GMSMapViewDelegate {
-     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+ extension MapViewController {
+  /*   func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         
         
         
@@ -340,15 +334,19 @@ extension MapViewController: GMSMapViewDelegate {
         
 
 
-  }
+  } */
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
         if (gesture == true && panelManager.isExpanded == true) {
             
             self.panelManager.collapsePanel()
             
+        } else if (gesture == true) {
+            LocationButton.isSelected = false
         }
     }
+    
+    
     
     
     func WalkingModeDirections(mapView: GMSMapView, from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) {
