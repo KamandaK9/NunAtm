@@ -10,14 +10,17 @@ import Foundation
 import GoogleMaps
 import SwiftyJSON
 
+
 let DIRECTION_API_KEY = googleApiKey
 
-class PathManager : NetworkEngine{
+
+
+class PathManager : NetworkEngine {
     
     static let shared = PathManager()
     
     //Polylines displayed are stored here
-    var polyLine: GMSPolyline?
+    var polyLine = GMSPolyline()
     
     private init() { }
 }
@@ -43,33 +46,45 @@ extension PathManager {
                 let path = GMSPath(fromEncodedPath: pointsString)
                 
                 //If there is a path displayed on screen, remove it
-                if let polyLine = self.polyLine {
-                    polyLine.map = nil
+              /*  if let polyLine = self.polyLine {
+                   polyLine.map = nil
                 }
+ */
                 
                 //Draw new polyline
                 self.polyLine = GMSPolyline(path: path)
                 
                 //Set width of polyline
-                self.polyLine?.strokeWidth = 5
+                self.polyLine.strokeWidth = 2
                 
                 //Set color of the polyline
-                self.polyLine?.strokeColor = strokeClr
+                self.polyLine.strokeColor = strokeClr
                 
                 //Set map of the polyline
-                self.polyLine?.map = mapView
+                self.polyLine.map = mapView
+                
                 
                 //Set new camera bounds
                 let bounds = GMSCoordinateBounds(path: path!)
                 
                 //Animate camera to show entire path on screen
                 mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 40.0))
+                
+               
+                
+               
+                
             }
             
             
         }
         
     }
+    
+   
+
+    
+    
     
     /* func updateTraveledPath(currentLocation: CLLocationCoordinate2D) {
         var index = 0
@@ -105,5 +120,7 @@ extension PathManager {
     
 
 }
+
+
 
 

@@ -31,7 +31,6 @@ PODS:
     - PromisesObjC (~> 1.2)
   - GoogleUtilities/Logger (6.7.2):
     - GoogleUtilities/Environment
-  - LayoutHelper (0.1.5)
   - leveldb-library (1.22)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
@@ -48,7 +47,6 @@ DEPENDENCIES:
   - GeoFire (from `https://github.com/firebase/geofire-objc.git`)
   - GoogleMaps
   - GooglePlaces
-  - LayoutHelper
   - Panels
   - ReachabilitySwift
   - SwiftyJSON
@@ -63,7 +61,6 @@ SPEC REPOS:
     - GoogleMaps
     - GooglePlaces
     - GoogleUtilities
-    - LayoutHelper
     - leveldb-library
     - nanopb
     - Panels
@@ -90,7 +87,6 @@ SPEC CHECKSUMS:
   GoogleMaps: b7f7fc569a9b354a3af0d9729dbec40957b7d41e
   GooglePlaces: ca8d4aba09ba79e0a829cf1dca03a41de6a09016
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
-  LayoutHelper: 54b1e44cf7a5bb5d8256f0ad805fce633454175d
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   Panels: cfafe2d0f92387f393a3b5e827af9ffffe46b073
@@ -98,6 +94,6 @@ SPEC CHECKSUMS:
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: a2e6c4a052e2992347cbe1f934da925ec307e292
+PODFILE CHECKSUM: 12958fbf60121ad9bd337f84074a66a7ead977a6
 
 COCOAPODS: 1.9.3

@@ -33,13 +33,13 @@ class LaunchViewController: UIViewController {
     }
     
      private func showOfflinePage() -> Void {
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.performSegue(withIdentifier: "NetworkUnavailable", sender: self)
         }
     }
     
      private func showMainPage() -> Void {
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.performSegue(withIdentifier: "MainController", sender: self)
         }
     }
@@ -47,6 +47,7 @@ class LaunchViewController: UIViewController {
     func setBackground() {
         view.addSubview(backgroundImageView)
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true

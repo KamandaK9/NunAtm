@@ -35,11 +35,12 @@ class SelectATMViewController: UIViewController {
         
     }
     
-    /// Code below: All buttons for ATM selection, keyword and color of path is sent over to mapview
+    //MARK: - All buttons for ATM selection, keyword and color of path is sent over to mapview
     
     @IBAction func DisplayAllATMS(_ sender: Any) {
         let DispAll = storyboard?.instantiateViewController(withIdentifier: "Mapview") as! MapViewController
         DispAll.keyatm = "ATM"
+        DispAll.strkeColor = #colorLiteral(red: 0, green: 0.4153311253, blue: 0, alpha: 1)
         present(DispAll, animated: true, completion: nil)
         
     }
@@ -53,7 +54,7 @@ class SelectATMViewController: UIViewController {
         let SAbsa = storyboard?.instantiateViewController(withIdentifier: "Mapview") as! MapViewController
         SAbsa.keyatm = "Absa"
         SAbsa.pin = "Absa_pin"
-        SAbsa.strkeColor = .red
+        SAbsa.strkeColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
         SAbsa.AtmKind = "ABSATMS"
         present(SAbsa, animated: true, completion: nil)
     }
@@ -74,7 +75,7 @@ class SelectATMViewController: UIViewController {
         let FNed = storyboard?.instantiateViewController(withIdentifier: "Mapview") as! MapViewController
         FNed.keyatm = "FNB ATM"
         FNed.pin = "Fnb_pin"
-        FNed.strkeColor = .green
+        FNed.strkeColor = #colorLiteral(red: 0, green: 0.7448331714, blue: 0.4741281867, alpha: 1)
         FNed.AtmKind = "FNBATMS"
         present(FNed, animated: true, completion: nil)
     }
@@ -93,7 +94,7 @@ class SelectATMViewController: UIViewController {
         let Stned = storyboard?.instantiateViewController(withIdentifier: "Mapview") as! MapViewController
         Stned.keyatm = "StandardBank"
         Stned.pin = "Standard_pin"
-        Stned.strkeColor = .blue
+        Stned.strkeColor = #colorLiteral(red: 0.02959540859, green: 0.04092096537, blue: 0.7686998248, alpha: 1)
         Stned.AtmKind = "STDATMS"
         present(Stned, animated: true, completion: nil)
     }

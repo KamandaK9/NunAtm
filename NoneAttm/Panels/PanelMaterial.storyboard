@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cKZ-sD-UtL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cKZ-sD-UtL">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -30,15 +31,20 @@
                                             <constraint firstAttribute="height" constant="100" id="re8-Hu-4Fz"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="38o-nC-UFf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Select Location" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="38o-nC-UFf">
                                         <rect key="frame" x="8" y="23" width="359" height="52"/>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="40"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Online" translatesAutoresizingMaskIntoConstraints="NO" id="cDs-tp-EdW">
+                                        <rect key="frame" x="291" y="-27" width="68" height="50"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="cDs-tp-EdW" firstAttribute="leading" secondItem="DpB-ii-x0L" secondAttribute="leading" constant="291" id="0GC-0f-9l9"/>
+                                    <constraint firstAttribute="trailing" secondItem="cDs-tp-EdW" secondAttribute="trailing" constant="16" id="0N3-Bu-TM3"/>
                                     <constraint firstItem="zfS-Wt-XH2" firstAttribute="top" secondItem="DpB-ii-x0L" secondAttribute="top" id="4Nd-3N-u4a"/>
                                     <constraint firstItem="zfS-Wt-XH2" firstAttribute="centerY" secondItem="DpB-ii-x0L" secondAttribute="centerY" id="J1k-Fm-l7A"/>
                                     <constraint firstAttribute="bottom" secondItem="38o-nC-UFf" secondAttribute="bottom" constant="25" id="NL7-p3-sY3"/>
@@ -46,62 +52,114 @@
                                     <constraint firstItem="zfS-Wt-XH2" firstAttribute="centerX" secondItem="38o-nC-UFf" secondAttribute="centerX" id="aBX-iC-2Zk"/>
                                     <constraint firstItem="38o-nC-UFf" firstAttribute="leading" secondItem="DpB-ii-x0L" secondAttribute="leadingMargin" id="nWP-Ec-fFF"/>
                                     <constraint firstAttribute="height" constant="100" id="riN-xS-O8z"/>
+                                    <constraint firstItem="38o-nC-UFf" firstAttribute="top" secondItem="cDs-tp-EdW" secondAttribute="bottom" id="sxH-Jc-Ogq"/>
                                     <constraint firstItem="38o-nC-UFf" firstAttribute="trailing" secondItem="DpB-ii-x0L" secondAttribute="trailingMargin" id="tSw-jd-JOV"/>
                                     <constraint firstItem="zfS-Wt-XH2" firstAttribute="leading" secondItem="DpB-ii-x0L" secondAttribute="leading" id="ueB-Qu-owT"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rTA-MD-ksX">
-                                <rect key="frame" x="87" y="125" width="200" height="110"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8u-Fe-32z">
+                                <rect key="frame" x="0.0" y="110" width="375" height="290"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wa4-5w-mWj">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="110"/>
-                                        <state key="normal" image="VoteTab"/>
-                                        <state key="selected" image="VoteTabSelected"/>
-                                        <connections>
-                                            <action selector="VoteShow:" destination="cKZ-sD-UtL" eventType="touchUpInside" id="NAn-6h-Auj"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IO5-m8-Mg1">
-                                        <rect key="frame" x="100" y="0.0" width="100" height="110"/>
-                                        <state key="normal" image="InfoTab"/>
-                                        <state key="selected" image="InfoTabSelected"/>
-                                        <connections>
-                                            <action selector="InfoShow:" destination="cKZ-sD-UtL" eventType="touchUpInside" id="NhV-q3-mAh"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eOa-AA-Hya">
-                                <rect key="frame" x="57" y="250" width="260" height="150"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WRe-sO-HOc">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="150"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rTA-MD-ksX" userLabel="ViewSelect">
+                                        <rect key="frame" x="87" y="5" width="200" height="110"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8UB-US-ncF">
-                                                <rect key="frame" x="0.0" y="0.0" width="130" height="67.666666666666671"/>
-                                                <state key="normal" image="VoteUpButtonClear"/>
-                                                <state key="selected" image="VoteUpButton"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wa4-5w-mWj">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="110"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="110" id="SHX-8f-yjT"/>
+                                                    <constraint firstAttribute="width" constant="100" id="hsS-wS-IU1"/>
+                                                </constraints>
+                                                <state key="normal" image="VoteTab"/>
+                                                <state key="selected" image="VoteTabSelected"/>
+                                                <connections>
+                                                    <action selector="VoteShow:" destination="cKZ-sD-UtL" eventType="touchUpInside" id="NAn-6h-Auj"/>
+                                                </connections>
                                             </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VoteCount" translatesAutoresizingMaskIntoConstraints="NO" id="lHs-uP-0Od">
-                                                <rect key="frame" x="0.0" y="82.666666666666686" width="130" height="67.333333333333314"/>
-                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IO5-m8-Mg1">
+                                                <rect key="frame" x="100" y="0.0" width="100" height="110"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="110" id="WSs-uQ-t3T"/>
+                                                    <constraint firstAttribute="width" constant="100" id="nzA-5I-Y5h"/>
+                                                </constraints>
+                                                <state key="normal" image="InfoTab"/>
+                                                <state key="selected" image="InfoTabSelected"/>
+                                                <connections>
+                                                    <action selector="InfoShow:" destination="cKZ-sD-UtL" eventType="touchUpInside" id="NhV-q3-mAh"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Xtd-A4-xWa">
-                                        <rect key="frame" x="130" y="0.0" width="130" height="150"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="67" translatesAutoresizingMaskIntoConstraints="NO" id="eOa-AA-Hya">
+                                        <rect key="frame" x="87.000000000000014" y="120" width="198.33333333333337" height="113.33333333333331"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgf-Wr-WGK">
-                                                <rect key="frame" x="0.0" y="0.0" width="130" height="67.666666666666671"/>
-                                                <state key="normal" image="VoteDownButtonClear"/>
-                                                <state key="selected" image="VoteDownButton"/>
-                                            </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DownCount" translatesAutoresizingMaskIntoConstraints="NO" id="I5e-ar-EWo">
-                                                <rect key="frame" x="0.0" y="82.666666666666686" width="130" height="67.333333333333314"/>
-                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-18" translatesAutoresizingMaskIntoConstraints="NO" id="WRe-sO-HOc" userLabel="VoteUp">
+                                                <rect key="frame" x="0.0" y="0.0" width="65.666666666666671" height="113.33333333333333"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8UB-US-ncF" userLabel="VoteU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="65.666666666666671" height="65.666666666666671"/>
+                                                        <state key="normal" image="VoteUpButtonClear"/>
+                                                        <state key="selected" image="VoteUpButton"/>
+                                                        <connections>
+                                                            <action selector="VoteUp:" destination="cKZ-sD-UtL" eventType="touchUpInside" id="umq-1a-yaj"/>
+                                                        </connections>
+                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="VJT-FO-IyN" userLabel="VoteCount">
+                                                        <rect key="frame" x="0.0" y="47.666666666666693" width="65.666666666666671" height="65.666666666666686"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UpVoteCount" translatesAutoresizingMaskIntoConstraints="NO" id="5sB-lh-tyo">
+                                                                <rect key="frame" x="0.0" y="25" width="35.333333333333336" height="16"/>
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="regular"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rT0-At-CFR">
+                                                                <rect key="frame" x="30.333333333333332" y="21.333333333333314" width="35.333333333333343" height="23.333333333333329"/>
+                                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="20"/>
+                                                                <color key="textColor" red="0.18039215689999999" green="0.71372549019999998" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-18" translatesAutoresizingMaskIntoConstraints="NO" id="Xtd-A4-xWa" userLabel="VoteDown">
+                                                <rect key="frame" x="132.66666666666666" y="0.0" width="65.666666666666657" height="113.33333333333333"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgf-Wr-WGK" userLabel="VoteD">
+                                                        <rect key="frame" x="0.0" y="0.0" width="65.666666666666671" height="65.666666666666671"/>
+                                                        <state key="normal" image="VoteDownButtonClear"/>
+                                                        <state key="selected" image="VoteDownButton"/>
+                                                        <connections>
+                                                            <action selector="VotesDown:" destination="cKZ-sD-UtL" eventType="touchUpInside" id="rex-GQ-Uer"/>
+                                                        </connections>
+                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="GUi-xb-gIU" userLabel="DownCount">
+                                                        <rect key="frame" x="0.0" y="47.666666666666693" width="65.666666666666671" height="65.666666666666686"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DownVoteCount" translatesAutoresizingMaskIntoConstraints="NO" id="NkL-kN-nZs">
+                                                                <rect key="frame" x="0.0" y="25" width="35.333333333333336" height="16"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGy-FF-Wen">
+                                                                <rect key="frame" x="30.333333333333346" y="23" width="35.333333333333343" height="20"/>
+                                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
+                                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="rTA-MD-ksX" firstAttribute="leading" secondItem="Y8u-Fe-32z" secondAttribute="leading" constant="87" id="6Z3-SZ-gN2"/>
+                                    <constraint firstItem="eOa-AA-Hya" firstAttribute="leading" secondItem="Y8u-Fe-32z" secondAttribute="leading" constant="87" id="9hQ-WW-Vnp"/>
+                                    <constraint firstAttribute="trailing" secondItem="eOa-AA-Hya" secondAttribute="trailing" constant="89.670000000000002" id="ACn-kV-Gmn"/>
+                                    <constraint firstItem="eOa-AA-Hya" firstAttribute="top" secondItem="rTA-MD-ksX" secondAttribute="bottom" constant="5" id="dqO-MI-gpb"/>
+                                    <constraint firstAttribute="trailing" secondItem="rTA-MD-ksX" secondAttribute="trailing" constant="88" id="jWu-Jn-wv8"/>
+                                    <constraint firstItem="rTA-MD-ksX" firstAttribute="top" secondItem="Y8u-Fe-32z" secondAttribute="top" constant="5" id="ogn-6k-CVV"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gLd-zh-NXs"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -109,24 +167,25 @@
                             <accessibilityTraits key="traits" updatesFrequently="YES"/>
                         </accessibility>
                         <constraints>
+                            <constraint firstItem="Y8u-Fe-32z" firstAttribute="trailing" secondItem="gLd-zh-NXs" secondAttribute="trailing" id="3YV-La-BCf"/>
                             <constraint firstItem="DpB-ii-x0L" firstAttribute="leading" secondItem="qSo-Oi-ZAj" secondAttribute="leading" id="58z-lj-tBw"/>
-                            <constraint firstItem="eOa-AA-Hya" firstAttribute="leading" secondItem="gLd-zh-NXs" secondAttribute="leading" constant="57" id="7ie-CN-Coy"/>
                             <constraint firstItem="DpB-ii-x0L" firstAttribute="trailing" secondItem="qSo-Oi-ZAj" secondAttribute="trailing" id="JXb-Xd-oOc"/>
-                            <constraint firstItem="rTA-MD-ksX" firstAttribute="leading" secondItem="gLd-zh-NXs" secondAttribute="leading" constant="87" id="KJY-On-Jxk"/>
-                            <constraint firstItem="gLd-zh-NXs" firstAttribute="trailing" secondItem="rTA-MD-ksX" secondAttribute="trailing" constant="88" id="Qbw-fD-lz7"/>
                             <constraint firstItem="DpB-ii-x0L" firstAttribute="top" secondItem="qSo-Oi-ZAj" secondAttribute="top" id="Tg4-QD-J5U"/>
-                            <constraint firstItem="eOa-AA-Hya" firstAttribute="top" secondItem="rTA-MD-ksX" secondAttribute="bottom" constant="15" id="Tnf-7A-4nt"/>
-                            <constraint firstItem="gLd-zh-NXs" firstAttribute="bottom" secondItem="rTA-MD-ksX" secondAttribute="bottom" constant="165" id="dCa-9N-ifz"/>
-                            <constraint firstItem="eOa-AA-Hya" firstAttribute="bottom" secondItem="gLd-zh-NXs" secondAttribute="bottom" id="hF7-Wo-NtD"/>
-                            <constraint firstItem="rTA-MD-ksX" firstAttribute="top" secondItem="DpB-ii-x0L" secondAttribute="bottom" constant="25" id="pS6-Mm-S6p"/>
-                            <constraint firstItem="gLd-zh-NXs" firstAttribute="trailing" secondItem="eOa-AA-Hya" secondAttribute="trailing" constant="58" id="zi1-Io-2JJ"/>
+                            <constraint firstItem="Y8u-Fe-32z" firstAttribute="top" secondItem="DpB-ii-x0L" secondAttribute="bottom" constant="10" id="iwG-J6-e9p"/>
+                            <constraint firstItem="Y8u-Fe-32z" firstAttribute="bottom" secondItem="gLd-zh-NXs" secondAttribute="bottom" id="n2s-9G-meP"/>
+                            <constraint firstItem="Y8u-Fe-32z" firstAttribute="leading" secondItem="gLd-zh-NXs" secondAttribute="leading" id="vAt-gk-ut1"/>
                         </constraints>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="375" height="400"/>
                     <size key="freeformSize" width="375" height="400"/>
                     <connections>
                         <outlet property="InfoSelect" destination="IO5-m8-Mg1" id="eKy-gb-Xzo"/>
+                        <outlet property="LblThumbsDownCount" destination="OGy-FF-Wen" id="E9d-pJ-cdk"/>
+                        <outlet property="LblThumbsUpCount" destination="rT0-At-CFR" id="NJV-Jw-bEu"/>
+                        <outlet property="OnlineImg" destination="cDs-tp-EdW" id="aeO-Tf-SWF"/>
                         <outlet property="Panel" destination="qSo-Oi-ZAj" id="82d-3N-vZJ"/>
+                        <outlet property="ThumbsDownbtn" destination="Vgf-Wr-WGK" id="CeD-d0-Hgv"/>
+                        <outlet property="ThumbsUpBtn" destination="8UB-US-ncF" id="KqK-Lr-cyQ"/>
                         <outlet property="VoteSelect" destination="wa4-5w-mWj" id="48K-C9-QLj"/>
                         <outlet property="VoteView" destination="eOa-AA-Hya" id="ZdG-vA-fda"/>
                         <outlet property="headerHeight" destination="riN-xS-O8z" id="jfy-7Y-B1U"/>
@@ -141,15 +200,19 @@
     </scenes>
     <resources>
         <image name="Border" width="376" height="98"/>
-        <image name="DownCount" width="55" height="16"/>
+        <image name="DownVoteCount" width="16" height="16"/>
         <image name="InfoTab" width="78" height="79"/>
         <image name="InfoTabSelected" width="78" height="79"/>
-        <image name="VoteCount" width="55" height="16"/>
-        <image name="VoteDownButton" width="65" height="65"/>
-        <image name="VoteDownButtonClear" width="66" height="66"/>
+        <image name="Online" width="50" height="50"/>
+        <image name="UpVoteCount" width="16" height="16"/>
+        <image name="VoteDownButton" width="64.666664123535156" height="64.666664123535156"/>
+        <image name="VoteDownButtonClear" width="65.666664123535156" height="65.666664123535156"/>
         <image name="VoteTab" width="79" height="79"/>
         <image name="VoteTabSelected" width="79" height="79"/>
         <image name="VoteUpButton" width="64.333335876464844" height="64.333335876464844"/>
-        <image name="VoteUpButtonClear" width="66" height="66"/>
+        <image name="VoteUpButtonClear" width="65.333335876464844" height="65.333335876464844"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import NoneAttm
+@testable import FirebaseCore
 
 class NoneAttmTests: XCTestCase {
 

@@ -17,12 +17,11 @@ import SwiftyJSON
 
 class MapViewController: UIViewController, GMSMapViewDelegate {
     
-    //var ref: DatabaseReference!
+    var ref: DatabaseReference!
     
     
     
     let Userinfo = UserDefaults.standard
-    @IBOutlet weak var lbladdy: UILabel!
     var keyatm: String = ""
     var pin: String = ""
     var atmtitle: String = ""
@@ -34,6 +33,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     private let locationManager = CLLocationManager()
     lazy var panelManager = Panels(target: self)
     var panelConfiguration = PanelConfiguration(size: .custom(330))
+    let panel = UIStoryboard.instantiatePanel(identifier: "PanelMaterial")
+    
+    private var timer = Timer()
+    var i : UInt = 0
+    var path = GMSPath()
+    var polyline = GMSPolyline()
+    var newPolyline = GMSPolyline()
+    var newPath = GMSMutablePath()
+    
     
     
     
@@ -57,7 +65,69 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     @IBAction func BackButton(_ sender: Any) {
-         performSegue(withIdentifier: "ShowATM", sender: self)
+        BackButton.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        
+           UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 6.0, options: .allowUserInteraction, animations: {[weak self] in self?.BackButton.transform = .identity},completion: nil)
+                performSegue(withIdentifier: "ShowATM", sender: self)
+               
+        
+    }
+    @IBOutlet weak var DriveInfo: UIStackView!
+    @IBOutlet weak var WalkInfo: UIStackView!
+    @IBOutlet weak var DriveButton: UIButton!
+    @IBOutlet weak var WalkButton: UIButton!
+    @IBOutlet weak var DriveLabel: UILabel!
+    @IBOutlet weak var WalkLabel: UILabel!
+    
+    
+    @IBAction func DriveButton(_ sender: Any) {
+        let willExpand = DriveInfo.isHidden
+        let DriveButtonNewTitle = willExpand ? UIImage(named: "DriveSelected.png") : UIImage(named: "Drive.png")
+        UIView.animate(
+            withDuration:0.2, delay: 0, options: .curveEaseIn,
+          animations: {
+            self.DriveInfo.subviews.forEach { $0.isHidden = !$0.isHidden }
+            self.DriveInfo.isHidden = !self.DriveInfo.isHidden
+            if willExpand {
+                self.DriveButton.setImage(DriveButtonNewTitle, for: .normal)
+            }
+        }, completion: { _ in
+          // When collapsing, wait for animation to finish before changing from normal to selected
+          if !willExpand {
+            self.DriveButton.setImage(DriveButtonNewTitle, for: .normal)
+          }
+    })
+        
+        
+        
+    }
+    
+    
+    @IBAction func WalkButton(_ sender: Any) {
+        let willExpand = WalkInfo.isHidden
+        let WalkButtonNewtitle = willExpand ? UIImage(named: "WalkSelected.png") : UIImage(named: "Walk.png")
+        UIView.animate(
+            withDuration:0.2, delay: 0, options: .curveEaseIn,
+          animations: {
+            self.WalkInfo.subviews.forEach { $0.isHidden = !$0.isHidden }
+            self.WalkInfo.isHidden = !self.WalkInfo.isHidden
+            if willExpand {
+                self.WalkButton.setImage(WalkButtonNewtitle, for: .normal)
+            }
+        }, completion: { _ in
+          // When collapsing, wait for animation to finish before changing from normal to selected
+          if !willExpand {
+            self.WalkButton.setImage(WalkButtonNewtitle, for: .normal)
+          }
+    })
+       
+       
+        
+      
+       
+       
+        
+   
         
     }
     
@@ -65,12 +135,14 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     @IBOutlet weak var mapView: GMSMapView!
   
+    @IBOutlet weak var BackButton: UIButton!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // ref = Database.database().reference(fromURL: "https://noneatm-atms-locations-data.firebaseio.com/")
+        ref = Database.database().reference(fromURL: "https://noneatm-atms-locations-data.firebaseio.com/")
     
         /// Custom mapView style initialization
         self.mapView.mapStyle(withFilename: "NatureGreen", andType:"json")
@@ -94,8 +166,58 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         let padding = UIEdgeInsets(top: 0, left: 0, bottom: 80, right: 0)
         mapView.padding = padding
         
+        //Hide Map Buttons / Drive / walk
+        HideOnLoad()
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.WalkDurationShow(notification:)), name: Notification.Name("RouteDuration"), object: nil)
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.DriveDurationShow(notification:)), name: Notification.Name("DriveDur"), object: nil)
+        
+        
+        
+        
+        
         
     }
+    
+    @objc func DriveDurationShow(notification: Notification) {
+        
+        guard let userInfo = notification.userInfo,
+              let DriveDuration = userInfo["DrivingDuration"] as? String
+        else {
+            print("No Info found")
+            return
+        }
+        
+        
+        DispatchQueue.main.async {
+            self.DriveLabel.text = DriveDuration
+            print(DriveDuration)
+        }
+    }
+    
+    @objc func WalkDurationShow(notification: Notification) {
+        
+        guard let userInfo = notification.userInfo,
+              let WalkDuration = userInfo["WalkDur"] as? String
+            else {
+            print("No Userinfo")
+            return
+        }
+        
+       
+        DispatchQueue.main.async {
+            self.WalkLabel.text = WalkDuration
+            print(WalkDuration)
+        }
+       
+    }
+    
+    
+    
+    
     
     /// ShowOffline page segue
     private func showOfflinePage() -> Void {
@@ -104,13 +226,16 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         }
     }
    
-    
-    
-    
-    /// Closing of ATM Panel
-    @IBAction func closePanel(_: Any) {
-        panelManager.dismiss()
+    /// Hides Labels of Walk and Drive for animation purposes
+    func HideOnLoad() {
+        self.DriveInfo.isHidden = true
+        self.WalkInfo.isHidden = true
+        self.DriveLabel.isHidden = true
+        self.WalkLabel.isHidden = true
     }
+    
+
+  
     
    
     /// Initialisation of ATM Panel and configuring of extra options
@@ -208,6 +333,107 @@ extension MapViewController: CLLocationManagerDelegate {
 
 
  extension MapViewController {
+ // MARK: - MARKER INFORMATION
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+            guard let placeMarker =  marker as? PlaceMarker else {return false}
+        
+                let atmtitre = placeMarker.place.name
+                let coordinate0 = placeMarker.place.coordinate
+                let myloc = mapView.myLocation!
+        
+       // observeSingleEvent(of: .value, with: { (snapshot)
+        atmtitle = placeMarker.place.name
+        atmloc = placeMarker.place.address
+        
+        let post = ["AtmName": atmtitle,
+                    "AtmAddress": atmloc,
+                    "lat": coordinate0.latitude,
+                    "long": coordinate0.longitude,
+                    "votesUpCount": 0,
+                    "votesDownCount": 0,
+                    "totalVotes": 0] as [String : Any]
+        
+           
+       
+            self.ref.child(self.AtmKind).queryOrdered(byChild: "AtmAddress").queryEqual(toValue: self.atmloc).observeSingleEvent(of: .value, with: { (DataSnapshot) in
+            
+            if DataSnapshot.exists(){
+                
+                
+                for item in DataSnapshot.children {
+                    
+                    let itemsID = item as! DataSnapshot
+                    let uid = itemsID.key
+                    
+                    let atm = Atm(snapshot: item as! DataSnapshot)
+                    
+                    let ThumbsUpCount = atm.votesUpCount.description
+                    let ThumbsDownCount = atm.votesDownCount.description
+                    let TotalCount = atm.totalVotes.description
+                    
+                    //Updating Local Variables
+     
+                         NotificationCenter.default.post(name:NSNotification.Name("ATMVotes"),object: nil,userInfo: ["VotesUp": ThumbsUpCount, "VotesDown":ThumbsDownCount, "TotalVotes": TotalCount, "uid": uid, "ATMKind": self.AtmKind])
+       
+                    print(ThumbsUpCount)
+       
+                }
+                
+            print("Data Exists")
+            } else {
+                self.ref.child(self.AtmKind).childByAutoId().setValue(post)
+                print("Added")
+            }
+        })
+    
+         self.ref.child(AtmKind).observeSingleEvent(of: .value, with: {(DataSnapshot)  in
+      
+              if DataSnapshot.exists(){
+
+            for item in DataSnapshot.children {
+                    
+                    let atm = Atm(snapshot: item as! DataSnapshot)
+                    
+                    self.atmtitle = atm.atmName.description
+                    self.atmloc = atm.address
+                    print(self.atmtitle)
+                }
+                
+                print("ATM already exists")
+                
+            } else {
+                self.ref.child(self.AtmKind).childByAutoId().setValue(post)
+                print("Added")
+            }
+        })
+
+                 print(atmtitle)
+        
+        NotificationCenter.default.post(name:NSNotification.Name("UserTappedMarker"),object: nil,userInfo: ["AtmHeading": atmtitre])
+        
+        
+        
+// MARK: - Zooms in on selected ATM marker
+        let camera = GMSCameraPosition.camera(withTarget: coordinate0, zoom: 18)
+        mapView.animate(to: camera)
+        self.panelManager.expandPanel()
+        
+        
+        
+// MARK: - Path Manager and Directions
+        PathManager.shared.drawPath(mapView: mapView, from: myloc.coordinate, to: coordinate0, strokeClr: strkeColor)
+        WalkingModeDirections(mapView: mapView, from: myloc.coordinate, to: coordinate0)
+        DrivingModeDirections(mapView: mapView, from: myloc.coordinate, to: coordinate0)
+        
+        
+        return false
+    }
+    
+   
+                    
+                    
+    
+    
   /*   func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         
         
@@ -222,7 +448,7 @@ extension MapViewController: CLLocationManagerDelegate {
         
         
         
-        //observeSingleEvent(of: .value, with: { (snapshot)
+        observeSingleEvent(of: .value, with: { (snapshot)
         atmtitle = placeMarker.place.name
         atmloc = placeMarker.place.address
         
@@ -336,13 +562,30 @@ extension MapViewController: CLLocationManagerDelegate {
 
   } */
     
+    func WalkingDrawPath(markr: GMSMarker) -> Bool  {
+        
+        guard let placeMarker =  markr as? PlaceMarker else {return false}
+        // Draw Path
+         let myloc = mapView.myLocation
+        let coordinate0 = placeMarker.place.coordinate
+        
+        
+        PathManager.shared.drawPath(mapView: mapView, from: myloc!.coordinate, to: coordinate0, strokeClr: strkeColor)
+        
+        
+        return false
+    }
+    
+    
+    
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
-        if (gesture == true && panelManager.isExpanded == true) {
+        if (gesture == true) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.panelManager.collapsePanel()
+                self.LocationButton.isSelected = false
+            }
             
-            self.panelManager.collapsePanel()
             
-        } else if (gesture == true) {
-            LocationButton.isSelected = false
         }
     }
     
@@ -378,9 +621,8 @@ extension MapViewController: CLLocationManagerDelegate {
                 print("Walking" + " " + walkdistance + " " + walkduration)
                 
                 
-                DispatchQueue.main.sync {
-                    NotificationCenter.default.post(name:NSNotification.Name("WalkingMode"),object:nil,userInfo: ["Walkingdur": walkduration])
-                }
+               UserDefaults.standard.set(walkduration, forKey: "wlkDuration")
+                NotificationCenter.default.post(name:NSNotification.Name("RouteDuration"),object: nil,userInfo: ["WalkDur": walkduration])
                 
                 
                 
@@ -423,7 +665,8 @@ extension MapViewController: CLLocationManagerDelegate {
                 print("Driving" + " " + distancestr + " " + duration)
                 
                 //Passes Data through to panel
-                DispatchQueue.main.async { NotificationCenter.default.post(name:NSNotification.Name("DrivingMode"),object:nil,userInfo: ["DrivingDist": distancestr,"DrivingDuration": duration])}
+                NotificationCenter.default.post(name:NSNotification.Name("DriveDur"),object: nil,userInfo: ["DrivingDuration": duration])
+                
                 
                 
                 
@@ -462,6 +705,7 @@ extension Double {
         return (self * divisor).rounded() / divisor
     }
 }
+
 
 
 
