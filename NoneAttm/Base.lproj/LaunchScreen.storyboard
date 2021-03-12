@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,16 +28,16 @@
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0" green="0.56078431370000004" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="CrQ-ZN-ujM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5Au-gq-U3S"/>
+                            <constraint firstItem="CrQ-ZN-ujM" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="G42-Al-zRi"/>
+                            <constraint firstItem="CrQ-ZN-ujM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="J5e-19-3Jd"/>
                             <constraint firstItem="BZR-9C-2cO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LiK-fA-jgg"/>
-                            <constraint firstItem="CrQ-ZN-ujM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Mzb-uv-cet"/>
                             <constraint firstItem="BZR-9C-2cO" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="RkY-eb-F1f"/>
-                            <constraint firstItem="CrQ-ZN-ujM" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="a69-qh-s96"/>
-                            <constraint firstAttribute="bottom" secondItem="CrQ-ZN-ujM" secondAttribute="bottom" id="kVd-q4-3wa"/>
+                            <constraint firstItem="CrQ-ZN-ujM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="g8j-GM-8MB"/>
+                            <constraint firstAttribute="bottom" secondItem="CrQ-ZN-ujM" secondAttribute="bottom" id="twZ-mp-tDB"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseUI
+import FirebaseDatabase
+import GoogleSignIn
+import FBSDKCoreKit
 
 
 
 class SelectATMViewController: UIViewController {
 
     
-
+    @IBOutlet weak var onLogin: UIButton!
+    
  let backgroundImageView = UIImageView()
  let UserInfo = UserDefaults.standard
  let greeting = "Hi, "
@@ -23,7 +29,8 @@ class SelectATMViewController: UIViewController {
  let network: NetworkManager = NetworkManager.sharedInstance
     @IBOutlet weak var HeaderBlck: UIView!
     
-    @IBOutlet weak var ShowUserName: UILabel!
+    
+    
     
     @IBAction func RemoveFirstLaunch(_ sender: Any) {
         
@@ -34,8 +41,29 @@ class SelectATMViewController: UIViewController {
         print("Object removed" + (remove as? String ?? "Me") + (name as? String ?? "Me") )
         
     }
+    @IBOutlet weak var Avatar: UIImageView!
+    @IBOutlet weak var onSignO: UIButton!
     
+
+    
+  
     //MARK: - All buttons for ATM selection, keyword and color of path is sent over to mapview
+    @IBAction func onSignOut(_ sender: Any) {
+        //try! Auth.auth().signOut()
+        // Sign out from Google
+            GIDSignIn.sharedInstance()?.signOut()
+            
+            // Sign out from Firebase
+            do {
+                try Auth.auth().signOut()
+                
+                // Update screen after user successfully signed out
+            } catch let error as NSError {
+                print ("Error signing out from Firebase: %@", error)
+
+            }
+        
+    }
     
     @IBAction func DisplayAllATMS(_ sender: Any) {
         let DispAll = storyboard?.instantiateViewController(withIdentifier: "Mapview") as! MapViewController
@@ -45,10 +73,7 @@ class SelectATMViewController: UIViewController {
         
     }
     
-    @IBAction func ShowSignUptest(_ sender: Any) {
-        let signup = storyboard?.instantiateViewController(withIdentifier: "ShowSignUp") as! SignLogController
-        present(signup, animated: true, completion: nil)
-    }
+ 
     
     @IBAction func AbsaButton(_ sender: Any) {
         let SAbsa = storyboard?.instantiateViewController(withIdentifier: "Mapview") as! MapViewController
@@ -99,6 +124,12 @@ class SelectATMViewController: UIViewController {
         present(Stned, animated: true, completion: nil)
     }
     
+    func switchStoryboard() {
+        let Newview = storyboard?.instantiateViewController(withIdentifier: "SignIn") as! SignInViewController
+            self.present(Newview, animated: true, completion: nil)
+        }
+    
+    
     
   /*  @IBAction func ShowName(_ sender: Any) {
        
@@ -122,15 +153,87 @@ class SelectATMViewController: UIViewController {
         self.present(alert, animated: true)
         
     } */
+    func showprofile() {
+        let Newview = storyboard?.instantiateViewController(withIdentifier: "Profile") as! ProfileViewController
+            self.present(Newview, animated: true, completion: nil)
+    }
     
+    func LoggedIn() {
+        
+        if let user = Auth.auth().currentUser {
+
+            if AccessToken.current != nil {
+                  // logged in using facebook
+                
+              }
+            else if  GIDSignIn.sharedInstance()!.currentUser != nil {
+                let user = GIDSignIn.sharedInstance()!.currentUser
+                if ((user?.profile.hasImage) != nil) {
+                    let userDP = user?.profile.imageURL(withDimension: 200)
+                    Avatar.sd_setImage(with: userDP)
+
+                  
+                } else {
+                    let currentUser = Auth.auth().currentUser!.uid
+                    let storage = Storage.storage()
+                    let storageRef = storage.reference()
+                    let ref = storageRef.child("profile/\(currentUser)")
+                    Avatar.sd_setImage(with: ref)
+                }
+                
+                
+           }
+        
+       
+    /*    Database.database().reference().child("users").child(currentUser).observeSingleEvent(of: .value, with: { (snapshot) in
+          // Get user value
+          let value = snapshot.value as? NSDictionary
+          let username = value?["name"] as? String ?? ""
+          
+          })*/
+        
+        
+            }
+    }
     
-   
+    func setUpAvatar() {
+        Avatar.layoutIfNeeded()
+        Avatar.layer.cornerRadius = Avatar.frame.height/2
+        Avatar.layer.borderWidth = 2
+        Avatar.layer.borderColor = #colorLiteral(red: 0.1294117647, green: 0.5294117647, blue: 0.007843137255, alpha: 1)
+        Avatar.clipsToBounds = true
+        Avatar.contentMode = .scaleToFill
     
+    }
+    
+    func OnCheck() {
+        
+        Avatar.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self,action: #selector(checkLogin))
+        Avatar.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func checkLogin() {
+        Auth.auth().addStateDidChangeListener() { auth, user in
+                if user != nil {
+                    self.LoggedIn()
+                    self.setUpAvatar()
+                    print("Hi")
+                } else {
+                    self.switchStoryboard()
+                }
+            
+            }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setBackground()
+        OnCheck()
+        LoggedIn()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.GoogleSign(notification:)), name: Notification.Name("GoogleSignedIn"), object: nil)
         
        // let User = self.UserInfo.object(forKey: "Name")
        // self.ShowUserName.text = greeting + (User as? String ?? "There")
@@ -141,6 +244,18 @@ class SelectATMViewController: UIViewController {
         }
         
     }
+    
+    @objc func GoogleSign(notification: Notification) {
+        guard let userInfo = notification.userInfo,
+            let userDP = userInfo["userDP"] as? String
+                else {
+            print("No UserInfo found")
+            return
+        }
+        
+    }
+    
+    
   
     
     /// Reachability Offline
@@ -150,17 +265,8 @@ class SelectATMViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        if(!appDelegate.hasAlreadyLaunched) {
-            
-            //set has AlreadyLaunched to false
-            appDelegate.sethasAlreadyLaunched()
-            
-            
-        }
-        
-       
-    }
+   
+
     
     
     

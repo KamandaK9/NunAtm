@@ -11,11 +11,13 @@ import GoogleMaps
 import Panels
 import Firebase
 import SwiftyJSON
+import GoogleMobileAds
 
 
 
 
-class MapViewController: UIViewController, GMSMapViewDelegate {
+
+class MapViewController: UIViewController, GMSMapViewDelegate, GADBannerViewDelegate {
     
     var ref: DatabaseReference!
     
@@ -35,22 +37,12 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     var panelConfiguration = PanelConfiguration(size: .custom(330))
     let panel = UIStoryboard.instantiatePanel(identifier: "PanelMaterial")
     
-    private var timer = Timer()
-    var i : UInt = 0
-    var path = GMSPath()
-    var polyline = GMSPolyline()
-    var newPolyline = GMSPolyline()
-    var newPath = GMSMutablePath()
-    
-    
-    
-    
+    @IBOutlet weak var bannerView: GADBannerView!
     
      let network = NetworkManager.sharedInstance
-    
-  
-    
+
     @IBOutlet weak var LocationButton: UIButton!
+    @IBOutlet weak var TopHeaderView: PassthroughView!
     
     
     @IBAction func PressLocation( _ sender: UIButton)  {
@@ -72,6 +64,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
                
         
     }
+    
+    //MARK: - Walk and Drive Buttons
     @IBOutlet weak var DriveInfo: UIStackView!
     @IBOutlet weak var WalkInfo: UIStackView!
     @IBOutlet weak var DriveButton: UIButton!
@@ -96,10 +90,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
           if !willExpand {
             self.DriveButton.setImage(DriveButtonNewTitle, for: .normal)
           }
-    })
-        
-        
-        
+     })
     }
     
     
@@ -119,16 +110,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
           if !willExpand {
             self.WalkButton.setImage(WalkButtonNewtitle, for: .normal)
           }
-    })
-       
-       
-        
-      
-       
-       
-        
-   
-        
+      })
     }
     
     
@@ -175,11 +157,11 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.DriveDurationShow(notification:)), name: Notification.Name("DriveDur"), object: nil)
         
-        
-        
-        
-        
-        
+        //Google Ads
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+  
     }
     
     @objc func DriveDurationShow(notification: Notification) {
@@ -214,6 +196,16 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         }
        
     }
+    
+    
+    lazy var adBannerView: GADBannerView = {
+        let adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        adBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        adBannerView.delegate = self
+        adBannerView.rootViewController = self
+
+        return adBannerView
+    }()
     
     
     
@@ -278,23 +270,11 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
             }
         }
     }
-    
-    
-        
-        
-    
- 
-    
 }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+
+
+
 
 
 // MARK: - CLLocationManagerDelegate
@@ -340,6 +320,8 @@ extension MapViewController: CLLocationManagerDelegate {
                 let atmtitre = placeMarker.place.name
                 let coordinate0 = placeMarker.place.coordinate
                 let myloc = mapView.myLocation!
+                
+                
         
        // observeSingleEvent(of: .value, with: { (snapshot)
         atmtitle = placeMarker.place.name
@@ -393,7 +375,6 @@ extension MapViewController: CLLocationManagerDelegate {
             for item in DataSnapshot.children {
                     
                     let atm = Atm(snapshot: item as! DataSnapshot)
-                    
                     self.atmtitle = atm.atmName.description
                     self.atmloc = atm.address
                     print(self.atmtitle)
@@ -409,12 +390,12 @@ extension MapViewController: CLLocationManagerDelegate {
 
                  print(atmtitle)
         
-        NotificationCenter.default.post(name:NSNotification.Name("UserTappedMarker"),object: nil,userInfo: ["AtmHeading": atmtitre])
+        NotificationCenter.default.post(name:NSNotification.Name("UserTappedMarker"),object: nil,userInfo: ["AtmHeading": atmtitre, "AtmLocation": atmloc])
         
         
         
 // MARK: - Zooms in on selected ATM marker
-        let camera = GMSCameraPosition.camera(withTarget: coordinate0, zoom: 18)
+        let camera = GMSCameraPosition.camera(withTarget: coordinate0, zoom: 20)
         mapView.animate(to: camera)
         self.panelManager.expandPanel()
         
@@ -683,6 +664,8 @@ extension MapViewController: CLLocationManagerDelegate {
   
    
 }
+
+
 
 extension GMSMapView {
     func mapStyle(withFilename name: String, andType type: String) {

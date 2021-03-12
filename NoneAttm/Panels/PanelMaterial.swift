@@ -9,6 +9,9 @@
 import Panels
 import UIKit
 import Firebase
+import MarqueeLabel
+
+
 
 class PanelMaterial: UIViewController, Panelable {
     var Titlee: String!
@@ -37,8 +40,8 @@ class PanelMaterial: UIViewController, Panelable {
     @IBOutlet var headerHeight: NSLayoutConstraint!
     @IBOutlet var headerPanel: UIView!
 
-    @IBOutlet weak var headerTitle: UILabel!
-    @IBOutlet var detailsLocation: UILabel!
+    
+    @IBOutlet weak var headerTitle: MarqueeLabel!
     
     @IBOutlet var Panel: UIView!
     
@@ -49,64 +52,85 @@ class PanelMaterial: UIViewController, Panelable {
     @IBOutlet weak var VoteSelect: UIButton!
     
     
+    @IBOutlet weak var UITextAddress: UITextView!
+    
+    @IBOutlet weak var LocationSelect: UIStackView!
+    
+    
     @IBAction func InfoShow(_ sender: Any) {
         VoteView.isHidden = true
         InfoSelect.isSelected = true
         VoteSelect.isSelected = false
+        LocationSelect.isHidden = false
+        
     }
     
     @IBAction func VoteShow(_ sender: Any) {
         VoteView.isHidden = false
         VoteSelect.isSelected = true
         InfoSelect.isSelected = false
+        LocationSelect.isHidden = true
+        
     }
     
     override func viewDidLoad() {
-        view.layoutIfNeeded()
         super.viewDidLoad()
-        
-        
-        
+        view.layoutIfNeeded()
+
         ref = Database.database().reference(fromURL: "https://noneatm-atms-locations-data.firebaseio.com/")
         
         DispatchQueue.main.async {
          
         NotificationCenter.default.addObserver(self, selector: #selector(self.atmtitleshow(notification:)), name: Notification.Name("UserTappedMarker"), object: nil)
         
-       NotificationCenter.default.addObserver(self, selector: #selector(self.AtmVotesShow(notification:)), name: Notification.Name("ATMVotes"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.AtmVotesShow(notification:)), name: Notification.Name("ATMVotes"), object: nil)
             
-            self.PulseAnimation()
-        
-   
+        NotificationCenter.default.addObserver(self, selector:#selector(self.AwakeSleep(notification:)),name: UIApplication.didBecomeActiveNotification,object: nil)
+      
         }
         
-        headerTitle.adjustsFontSizeToFitWidth = true
-        headerTitle.minimumScaleFactor = 0.5
         headerTitle.sizeToFit()
+        self.headerTitle.text = "this an ultra long textttttttttttttttttttttt"
+        self.headerTitle.type = .continuous
+        self.headerTitle.triggerScrollStart()
+        self.headerTitle.animationCurve = .easeInOut
+        self.headerTitle.labelWillBeginScroll()
         VoteSelect.isSelected = true
+        LocationSelect.isHidden = true
         headerTitle.preferredMaxLayoutWidth = 150
-       /* detailsLocation.adjustsFontSizeToFitWidth = true
-        detailsLocation.minimumScaleFactor = 0.5
-        detailsLocation.sizeToFit() */
+        UITextAddress.adjustsFontForContentSizeCategory = true
+        UITextAddress.sizeToFit()
         
         
-            
+      //  _ = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(PanelMaterial.marquee), userInfo: nil, repeats: true)
+        
+        self.PulseAnimation()
+    
         }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+    
+    @objc func AwakeSleep(notification: Notification) {
+        self.PulseAnimation()
+        
+    }
+    
     
 @objc func atmtitleshow(notification: Notification) {
     
     guard let userInfo = notification.userInfo,
-          let Atmheading = userInfo["AtmHeading"] as? String else {
-         // let Atmloc = userInfo["AtmLocation"] as? String else {
+          let Atmheading = userInfo["AtmHeading"] as? String,
+          let Atmloc = userInfo["AtmLocation"] as? String
+        else {
         print("No UserInfo found")
         return
     }
     
     headerTitle.text = Atmheading
-   // detailsLocation.text = Atmloc
-    
-    
-   
+    UITextAddress.text = Atmloc
+
     }
     
    @objc func AtmVotesShow(notification: Notification) {
@@ -127,28 +151,19 @@ class PanelMaterial: UIViewController, Panelable {
         
              LblThumbsUpCount.text = thumbsUp
              LblThumbsDownCount.text = thumbsDown
-        
-            
-        
+ 
             AtmInfo.set(uid, forKey: "uid")
             AtmInfo.set(atmkind, forKey: "atmkind")
             AtmInfo.set(thumbsUp, forKey: "thumbsup")
             AtmInfo.set(thumbsDown, forKey: "thumbsdown")
-            
-        
-    
-        
-        
     }
-    
-    
-    
+
     func PanelView() {
         headerPanel.roundCorners([.topLeft,.topRight], radius: 20)
     
     }
     
-    func PulseAnimation () {
+    func PulseAnimation() {
         let pulse = CASpringAnimation(keyPath: "transform.scale")
         pulse.duration = 0.4
         pulse.fromValue = 1.0
@@ -159,6 +174,8 @@ class PanelMaterial: UIViewController, Panelable {
         pulse.repeatCount = .infinity
         OnlineImg.layer.add(pulse, forKey: nil)
     }
+    
+ 
     
 //MARK: - Voting System
     @IBAction func VoteUp(_ sender: UIButton) {
@@ -292,8 +309,22 @@ class PanelMaterial: UIViewController, Panelable {
         }
       }
     
+    
+   
  
 }
+
+extension PanelMaterial {
+    @objc func marquee(){
+        
+        let str = headerTitle.text!
+        let indexFirst = str.index(str.startIndex, offsetBy: 0)
+        let indexSecond = str.index(str.startIndex, offsetBy: 1)
+        headerTitle.text = String(str.suffix(from: indexSecond)) +  String(str[indexFirst])
+        
+    }
+}
+
 
 
 
