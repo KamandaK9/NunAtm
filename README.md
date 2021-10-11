@@ -7,3 +7,5 @@ The App is yet to be completed fully, however main functionality is present. The
 main API's used. The functionality of being able to vote from an anonymous user (No Profile Implementation has been made as yet TBA). Voting is registered and updates
 the relevant UI within the app to confirm or deny the status of the ATM. 
 
+It is a project that i've been working to pushing, it shall be done. With more updates in the future. Stay Tuned.
+
