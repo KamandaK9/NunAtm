@@ -17,7 +17,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
 
-let googleApiKey = "AIzaSyBgAjsJmrTCRkgYWUo3atbhqccJw6Ly_bc"
+let googleApiKey = ""
 
 
 
